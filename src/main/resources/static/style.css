@@ -1,0 +1,35 @@
+html, body {
+  box-sizing: border-box;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+  background-color: #d6d6d6;
+}
+
+body {
+  height: 70%;
+}
+
+#nav-items-container {
+  list-style-type: none;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  border: 1px solid black;
+}
+
+#footer {
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  min-height: 30%;
+  min-width: 100%;
+  color: #ffffff;
+  background-color: #0e1110;
+  overflow: auto;
+}

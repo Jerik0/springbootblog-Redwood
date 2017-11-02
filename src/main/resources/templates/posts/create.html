@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments :: head(Create a Post)"></head>
+<body>
+<div th:replace="fragments :: nav-bar"></div>
+  <div id="content-container">
+    <form action="/posts/create" method="post">
+      <button>Submit</button>
+    </form>
+  </div>
+</body>
+<footer th:replace="fragments :: footer"></footer>
+<script th:replace="fragments :: script"></script>
+</html>
