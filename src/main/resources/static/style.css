@@ -28,19 +28,25 @@ li > a:visited {
 
 li > a:hover {
   color: #ffffff;
+  background-color: #1d2123;
 }
 
 #nav-items-container {
+  margin: 0;
   list-style-type: none;
   border: 1px solid black;
   display: flex;
   flex-direction: row;
+  padding: 0;
 }
 
 #number-request-container {
+  margin: 5px;
+  padding: 0;
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 #focus-container {
@@ -57,6 +63,7 @@ li > a:hover {
   margin: 1px;
   border: 1px solid #0e1110;
   border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 #footer {
@@ -66,6 +73,6 @@ li > a:hover {
   min-height: 30%;
   min-width: 100%;
   color: #ffffff;
-  background-color: #0e1110;
+  background-color: #1d2123;
   overflow: auto;
 }

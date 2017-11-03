@@ -5,11 +5,11 @@
 <body>
   <div th:replace="fragments/navbar :: nav-bar"></div>
   <div id="fail-container" th:if="${notEqual}">
-    <p>Your roll was <span th:text="${roll}"></span>. That was too <span th:text="${helper}"></span>.</p>
+    <h1 th:text="${'Your roll was ' + roll + '. That was too ' + helper + '.'}"></h1>
   </div>
 
-  <div id="success-container" th:if="${notEqual} == false">
-    <p>Your roll was correct!</p>
+  <div id="success-container" th:if="${notEqual == false}">
+    <h1>Your roll was correct!</h1>
   </div>
 
 <div><a href="/roll-dice">Try Again</a></div>
