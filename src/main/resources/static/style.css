@@ -1,15 +1,33 @@
 html, body {
+  font-family: 'Roboto Slab', serif;
   box-sizing: border-box;
+  font-size: 1.5em;
 }
 
 html {
   position: relative;
   min-height: 100%;
-  background-color: #d6d6d6;
+  background-color: #c4d6d6;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   height: 70%;
+}
+
+li > a:link {
+  color: #000000;
+  text-decoration: none;
+}
+
+li > a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+
+li > a:hover {
+  color: #ffffff;
 }
 
 #nav-items-container {
@@ -19,8 +37,26 @@ body {
   flex-direction: row;
 }
 
-.nav-item {
+#number-request-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#focus-container {
+  margin: 0 auto;
+}
+
+#nav-bar {
   border: 1px solid black;
+  width: 100%;
+}
+
+.nav-item {
+  padding: 2px;
+  margin: 1px;
+  border: 1px solid #0e1110;
+  border-radius: 4px;
 }
 
 #footer {
