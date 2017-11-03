@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head(Results)">
+</head>
+<body>
+  <div th:replace="fragments/navbar :: nav-bar"></div>
+  <div id="fail-container" th:if="${notEqual}">
+    <p>Your roll was <span th:text="${roll}"></span>. That was too <span th:text="${helper}"></span>.</p>
+  </div>
+
+  <div id="success-container" th:if="${notEqual} == false">
+    <p>Your roll was correct!</p>
+  </div>
+
+<div><a href="/roll-dice">Try Again</a></div>
+</body>
+</html>
