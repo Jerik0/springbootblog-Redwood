@@ -1,36 +1,48 @@
 package com.codeup.blog.controllers;
 
+import com.codeup.blog.models.Post;
+import com.codeup.blog.svcs.PostSvc;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class PostsController {
 
+  private final PostSvc postSvc;
+
+  @Autowired
+  public PostsController(PostSvc postSvc) {
+    this.postSvc = postSvc;
+  }
+
   @GetMapping("/posts")
-  @ResponseBody
-  public String posts() {
-    return "posts index page";
+  public String posts(Model model) {
+    model.addAttribute("posts", postSvc.findAll());
+    return "/posts/index";
   }
 
   @GetMapping("/posts/{id}")
-  @ResponseBody
-  public String postsId(@PathVariable Integer id) {
-    return "view an individual post";
+  public String postsId(@PathVariable Integer id, Model model) {
+    Post post = postSvc.findOne((long) id);
+    model.addAttribute("post", post);
+    return "/posts/show";
   }
 
   @GetMapping("/posts/create")
-  @ResponseBody
-  public String postCreate() {
+  public String showCreateForm(Model model) {
+    model.addAttribute("post", new Post());
     return "posts/create";
   }
 
   @PostMapping("/posts/create")
-  @ResponseBody
-  public String postsCreate() {
-    return "posts/create";
+  public String postsCreate(@ModelAttribute Post post) {
+    postSvc.save(post);
+    return "redirect:/posts";
   }
 
 }

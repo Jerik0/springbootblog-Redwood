@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class DiceRollController {
-  int picked = (int) Math.floor((Math.random() * 6) + 1);
+  private int picked = (int) Math.floor((Math.random() * 6) + 1);
 
   @GetMapping("/roll-dice/{n}")
   public String randomizer(@PathVariable Integer n, Model model) {

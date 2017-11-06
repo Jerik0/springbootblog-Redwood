@@ -4,6 +4,7 @@
 </head>
 <body>
   <div th:replace="fragments/navbar :: nav-bar"></div>
+
   <div id="fail-container" th:if="${notEqual}">
     <h1 th:text="${'Your roll was ' + roll + '. That was too ' + helper + '.'}"></h1>
   </div>
@@ -12,7 +13,9 @@
     <h1>Your roll was correct!</h1>
   </div>
 
-<div><a href="/roll-dice">Try Again</a></div>
+  <div>
+    <a href="/roll-dice">Try Again</a>
+  </div>
 </body>
 <footer th:replace="fragments/footer :: footer"></footer>
 </html>
