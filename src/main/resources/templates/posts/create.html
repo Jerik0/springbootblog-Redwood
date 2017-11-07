@@ -3,7 +3,7 @@
 <head th:replace="fragments/head :: head('Create A Post')"></head>
 <body>
 <div th:replace="fragments/navbar :: nav-bar"></div>
-  <div id="content-container">
+  <div class="content-container">
     <form action="/posts/create" method="post" th:object="${post}">
 
       <input th:field="*{title}"/>
@@ -13,7 +13,7 @@
       <button>Submit</button>
     </form>
   </div>
+  <footer th:replace="fragments/footer :: footer"></footer>
 </body>
-<footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/script :: script"></script>
 </html>

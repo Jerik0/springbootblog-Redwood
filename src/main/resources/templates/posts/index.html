@@ -3,13 +3,16 @@
 <head th:replace="fragments/head :: head(Posts)">
 </head>
 <body>
-<div th:replace="fragments/navbar :: nav-bar"></div>
-<div th:each="post : ${posts}">
-  <h1>
-    <a th:href="${'/posts/' + post.id}" th:text="${post.title}"></a>
-  </h1>
-</div>
+  <div th:replace="fragments/navbar :: nav-bar"></div>
+
+  <div class="content-container">
+    <div th:each="post : ${posts}" class="post-title">
+      <h2>
+        <a th:href="${'/posts/' + post.id}" th:text="${post.title}"></a>
+      </h2>
+    </div>
+  </div>
+  <footer th:replace="fragments/footer :: footer"></footer>
 </body>
-<footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/script :: script"></script>
 </html>
