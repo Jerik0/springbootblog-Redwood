@@ -17,6 +17,11 @@ public class UsersController {
 
   @GetMapping("/users/create")
   public String createUser() {
+    return "users/create";
+  }
+
+  @GetMapping("/users/profile")
+  public String showProfile() {
     return "users/profile";
   }
 

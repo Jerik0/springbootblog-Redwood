@@ -2,6 +2,7 @@ package com.codeup.blog.controllers;
 
 import com.codeup.blog.models.Post;
 import com.codeup.blog.repositories.PostsRepository;
+import com.codeup.blog.repositories.UserRepository;
 import com.codeup.blog.svcs.PostSvc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,11 +17,13 @@ public class PostsController {
 
   private final PostSvc postSvc;
   private final PostsRepository postsDao;
+  private final UserRepository usersDao;
 
   @Autowired
-  public PostsController(PostSvc postSvc, PostsRepository postsDao) {
+  public PostsController(PostSvc postSvc, PostsRepository postsDao, UserRepository usersDao) {
     this.postSvc = postSvc;
     this.postsDao = postsDao;
+    this.usersDao = usersDao;
   }
 
   @GetMapping("/posts")

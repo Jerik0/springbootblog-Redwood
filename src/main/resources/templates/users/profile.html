@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head :: head('Profile')">
 </head>
 <body>
+<div th:replace="fragments/navbar :: nav-bar"></div>
+
+<div>
+  This is your profile :D
+</div>
 
 </body>
+<footer th:replace="fragments/footer :: footer"></footer>
+<script th:replace="fragments/script :: script"></script>
 </html>
