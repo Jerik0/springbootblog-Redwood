@@ -8,6 +8,10 @@
 <h1 th:text="${post.title}"></h1>
 <p th:text="${post.body}"></p>
 
+<form th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
+  <button>Delete</button>
+</form>
+
 </body>
 <script th:replace="fragments/script :: script"></script>
 </html>

@@ -109,3 +109,7 @@ h2 > a:visited {
   background-color: #1d2123;
   overflow: auto;
 }
+
+.shown {
+  background-color: rgba(255, 255, 255, 0.3);
+}
