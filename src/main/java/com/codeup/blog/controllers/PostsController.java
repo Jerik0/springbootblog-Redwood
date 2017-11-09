@@ -1,10 +1,12 @@
 package com.codeup.blog.controllers;
 
 import com.codeup.blog.models.Post;
+import com.codeup.blog.models.User;
 import com.codeup.blog.repositories.PostsRepository;
 import com.codeup.blog.repositories.UserRepository;
 import com.codeup.blog.svcs.PostSvc;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -62,7 +64,9 @@ public class PostsController {
 
   @PostMapping("/posts/create")
   public String postsCreate(@ModelAttribute Post post) {
+    User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     postsDao.save(post);
+    post.setOwner(user);
     return "redirect:/posts";
   }
 
