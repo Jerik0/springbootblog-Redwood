@@ -15,8 +15,8 @@ public class UsersController {
     this.usersDao = usersDao;
   }
 
-  @GetMapping("/users/create")
-  public String createUser() {
+  @GetMapping("/users/registration")
+  public String showRegistrationForm() {
     return "users/create";
   }
 
