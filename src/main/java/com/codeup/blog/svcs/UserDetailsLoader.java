@@ -17,7 +17,6 @@ public class UserDetailsLoader implements UserDetailsService{
 
   public UserDetailsLoader(UserRepository repository) {
     this.repository = repository;
-
   }
 
   @Override

@@ -28,6 +28,7 @@ public class User {
     id = copy.id;
     username = copy.username;
     email = copy.email;
+    password = copy.password;
   }
 
   public String getEmail() {
