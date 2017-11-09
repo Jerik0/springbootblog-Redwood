@@ -65,8 +65,8 @@ public class PostsController {
   @PostMapping("/posts/create")
   public String postsCreate(@ModelAttribute Post post) {
     User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    postsDao.save(post);
     post.setOwner(user);
+    postsDao.save(post);
     return "redirect:/posts";
   }
 
