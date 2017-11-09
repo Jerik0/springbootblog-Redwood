@@ -4,7 +4,7 @@
 <body>
 <div th:replace="fragments/navbar :: nav-bar"></div>
   <div class="content-container">
-    <form action="/posts/create" method="post" th:object="${post}">
+    <form th:action="@{/posts/create}" th:method="post" th:object="${post}">
 
       <input th:field="*{title}"/>
 
