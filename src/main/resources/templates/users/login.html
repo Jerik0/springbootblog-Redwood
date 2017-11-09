@@ -5,15 +5,14 @@
 <body>
   <div th:replace="fragments/navbar :: nav-bar"></div>
   <div>
-    <form th:action="@{/login}" method="post" th:object="${user}">
+    <form th:action="@{/login}" th:method="post">
       <label for="username">Username</label>
-      <input id="username" th:field="*{username}"/>
-
-      <label for="email">E-mail Address</label>
-      <input id="email" th:field="*{email}"/>
+      <input id="username" name="username" type="text" />
 
       <label for="password">Password</label>
-      <input id="password" th:field="*{password}"/>
+      <input id="password" name="password" type="password" />
+
+      <input type="submit" value="Log In" />
     </form>
   </div>
 </body>

@@ -5,6 +5,7 @@ import com.codeup.blog.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,12 +22,13 @@ public class UsersController {
     this.encoder = encoder;
   }
 
-  @GetMapping("/users/register")
-  public String showRegistrationForm() {
+  @GetMapping("/register")
+  public String showRegistrationForm(Model model) {
+    model.addAttribute("user", new User());
     return "users/create";
   }
 
-  @PostMapping("/users/register")
+  @PostMapping("/register")
   public String saveUser(@ModelAttribute User user) {
     user.setPassword(encoder.encode(user.getPassword()));
     usersDao.save(user);

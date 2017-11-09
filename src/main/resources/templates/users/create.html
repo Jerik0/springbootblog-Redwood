@@ -5,9 +5,19 @@
 <body>
 <div th:replace="fragments/navbar :: nav-bar"></div>
 
-<div>
-  This is where we'll create users n stuff.
-</div>
+  <div>
+    <form th:action="@{/register}" th:method="post" th:object="${user}">
+      <label for="username">Username</label>
+      <input id="username" th:field="*{username}"/>
+
+      <label for="email">E-mail Address</label>
+      <input id="email" th:field="*{email}"/>
+
+      <label for="password">Password</label>
+      <input id="password" th:field="*{password}"/>
+      <button>Sign Me Up!</button>
+    </form>
+  </div>
 </body>
 <footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/script :: script"></script>
