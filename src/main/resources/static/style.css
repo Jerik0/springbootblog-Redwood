@@ -7,7 +7,7 @@ html, body {
 html {
   position: relative;
   min-height: 100%;
-  background-color: #eaffff;
+  /*background-color: #eaffff;*/
 }
 
 body {
@@ -18,18 +18,18 @@ body {
 }
 
 li > a:link {
-  color: #000000;
+  color: #1d2123;
   text-decoration: none;
 }
 
 li > a:visited, a:visited {
-  color: #000000;
+  color:  #1d2123;
   text-decoration: none;
 }
 
 li > a:hover {
   color: #ffffff;
-  background-color: #1d2123;
+  background-color: #231c18;
 }
 
 h2 > a:link {
@@ -51,20 +51,26 @@ h2 > a:visited {
   padding: 0;
 }
 
-.post-title:nth-of-type(odd) {
-  background-color: #d6d6d6;
-}
-
-.post-title {
+.post-tile {
   display: inline-block;
   margin: 4px;
-  border: 1px solid #ED3C28;
+  border: 1px solid #ed2c46;
   border-radius: 5px;
   font-weight: lighter;
-  color: #eaffff;
+  color: #0ca2a4;
   text-align: center;
   padding: 5px;
-  background-color: #cbcbcb;
+  background-color: #eaede1;
+}
+
+.owner-container {
+  position: relative;
+}
+
+.post-owner {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
 }
 
 #number-request-container {
@@ -88,9 +94,9 @@ h2 > a:visited {
 .nav-item {
   padding: 2px;
   margin: 1px;
-  border: 1px outset #0e1110;
+  border: 1px groove #ed2c46;
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: #d6fffd;
 }
 
 .nav-item:hover {
@@ -108,8 +114,4 @@ h2 > a:visited {
   color: #ffffff;
   background-color: #1d2123;
   overflow: auto;
-}
-
-.shown {
-  background-color: rgba(255, 255, 255, 0.3);
 }

@@ -35,7 +35,7 @@ public class UsersController {
     return "redirect:/login";
   }
 
-  @GetMapping("/users/profile")
+  @GetMapping("/profile")
   public String showProfile() {
     return "users/profile";
   }
