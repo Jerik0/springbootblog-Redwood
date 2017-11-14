@@ -52,6 +52,7 @@ div > a:visited {
 
 /*=============NAV BAR STUFF===============*/
 #nav-items-container {
+  position: relative;
   background: url('/images/escheresque_ste.png');
   margin: 0;
   list-style-type: none;
@@ -59,6 +60,7 @@ div > a:visited {
   flex-direction: row;
   padding: 0;
   box-shadow: 1px 3px 1px #231c18;
+  z-index: 10;
 }
 
 #nav-bar {
@@ -79,7 +81,7 @@ div > a:visited {
   border-radius: 5px;
 }
 
-/*================POSTS====================*/
+/*=================POSTS===================*/
 .post-tile {
   position: relative;
   box-sizing: border-box;
@@ -128,6 +130,17 @@ div > a:visited {
 
 #focus-container {
   margin: 0 auto;
+}
+
+/*===========ABOVE AND BELOW PAGE===========*/
+.title-div {
+  color: #ffffff;
+  background-color: #75edd1;
+}
+
+.title-div > h1 {
+  color: #231c18;
+  margin-left: 25px;
 }
 
 #footer {

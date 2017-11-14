@@ -4,6 +4,7 @@
 </head>
 <body>
   <div th:replace="fragments/navbar :: nav-bar"></div>
+  <div th:replace="fragments/titlediv :: titlediv('Forum Posts')"></div>
 
   <div class="content-container">
     <div th:each="post : ${posts}" class="post-tile">
