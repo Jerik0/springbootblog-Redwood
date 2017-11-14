@@ -1,13 +1,13 @@
 html, body {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 html {
   position: relative;
   min-height: 100%;
-  /*background-color: #eaffff;*/
+  background: url(/images/congruent_pentagon.png);
 }
 
 body {
@@ -17,19 +17,24 @@ body {
   height: 70%;
 }
 
+/*=================LINKS===================*/
+li > a {
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
 li > a:link {
-  color: #1d2123;
+  color: #0ca2a4;
   text-decoration: none;
 }
 
-li > a:visited, a:visited {
-  color:  #1d2123;
+li > a:visited {
+  color: #0ca2a4;
   text-decoration: none;
 }
 
 li > a:hover {
   color: #ffffff;
-  background-color: #231c18;
 }
 
 h2 > a:link {
@@ -41,26 +46,61 @@ h2 > a:visited {
   color: #eaffff;
 }
 
+div > a:visited {
+  color: #eaffff;
+}
+
+/*=============NAV BAR STUFF===============*/
 #nav-items-container {
-  background-color: #88e4ff;
+  background: url('/images/escheresque_ste.png');
   margin: 0;
   list-style-type: none;
-  border: 1px solid black;
   display: flex;
   flex-direction: row;
   padding: 0;
+  box-shadow: 1px 3px 1px #231c18;
 }
 
+#nav-bar {
+  width: 100%;
+}
+
+.nav-item {
+  font-weight: 200;
+  font-size: .85em;
+  padding: 2px;
+  margin: 3px 5px;
+}
+
+.nav-item:hover {
+  margin: 2px 4px;
+  color: #ffffff;
+  border: 1px solid #0ca2a4;
+  border-radius: 5px;
+}
+
+/*================POSTS====================*/
 .post-tile {
-  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  /*display: inline-block;*/
   margin: 4px;
-  border: 1px solid #ed2c46;
   border-radius: 5px;
   font-weight: lighter;
   color: #0ca2a4;
   text-align: center;
   padding: 5px;
-  background-color: #eaede1;
+  background-color: #231c18;
+}
+
+.post-title {
+  text-decoration: none;
+  color: #d6fffd;
+}
+
+.post-tile:hover {
+  color: #0fcdd0;
+  background-color: rgba(35 28 24 0.5);
 }
 
 .owner-container {
@@ -71,6 +111,10 @@ h2 > a:visited {
   position: absolute;
   bottom: 5px;
   left: 5px;
+}
+
+.post-owner:hover {
+  text-shadow: 2px 2px 1px #065051;
 }
 
 #number-request-container {
@@ -84,24 +128,6 @@ h2 > a:visited {
 
 #focus-container {
   margin: 0 auto;
-}
-
-#nav-bar {
-  border: 1px solid black;
-  width: 100%;
-}
-
-.nav-item {
-  padding: 2px;
-  margin: 1px;
-  border: 1px groove #ed2c46;
-  border-radius: 4px;
-  background-color: #d6fffd;
-}
-
-.nav-item:hover {
-  color: #ffffff;
-  background-color: #1d2123;
 }
 
 #footer {
