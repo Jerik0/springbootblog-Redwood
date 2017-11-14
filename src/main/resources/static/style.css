@@ -1,3 +1,4 @@
+/*=================GENERAL=================*/
 html, body {
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
@@ -15,6 +16,19 @@ body {
   display: flex;
   flex-direction: column;
   height: 70%;
+}
+
+/*================HOME LOGO================*/
+#coffee-word, #bomb-word {
+  font-family: 'Anton', sans-serif;
+}
+
+#coffee-word {
+  color: #75edd1;
+}
+
+#bomb-word {
+  color: #ed663a;
 }
 
 /*=================LINKS===================*/
@@ -51,6 +65,11 @@ div > a:visited {
 }
 
 /*=============NAV BAR STUFF===============*/
+#home-icon {
+  height: 64px;
+  width: 64px;
+}
+
 #nav-items-container {
   position: relative;
   background: url('/images/escheresque_ste.png');
@@ -85,14 +104,16 @@ div > a:visited {
 .post-tile {
   position: relative;
   box-sizing: border-box;
-  /*display: inline-block;*/
   margin: 4px;
   border-radius: 5px;
+  border-style: outset;
+  border-width: 2px;
   font-weight: lighter;
   color: #0ca2a4;
   text-align: center;
   padding: 5px;
   background-color: #231c18;
+  max-width: 33%;
 }
 
 .post-title {
@@ -133,9 +154,20 @@ div > a:visited {
 }
 
 /*===========ABOVE AND BELOW PAGE===========*/
+#topbar-container {
+  position: relative;
+  background-color: #231c18;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
 .title-div {
   color: #ffffff;
   background-color: #75edd1;
+  border-bottom: 2px dashed #1d2123;
 }
 
 .title-div > h1 {

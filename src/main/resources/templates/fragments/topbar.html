@@ -1,3 +1,13 @@
-<div th:fragment="topbar" id="topbar-container">
-
+<div th:fragment="top-bar">
+  <ul id="topbar-container">
+    <li class="nav-item">
+      <a href="/">
+        <img id="home-icon" th:src="@{/images/tea-cup.svg}" alt="Home"/>
+        <span id="coffee-word">COFFEE</span><span id="bomb-word">BOMB</span>
+      </a>
+    </li>
+    <li class="nav-item" sec:authorize="isAuthenticated()"><a href="/profile">Profile</a></li>
+    <li class="nav-item" sec:authorize="!isAuthenticated()"><a href="/login">Log In</a></li>
+    <li class="nav-item" sec:authorize="!isAuthenticated()"><a href="/register">Sign Up</a></li>
+  </ul>
 </div>
