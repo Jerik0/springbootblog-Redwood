@@ -71,11 +71,6 @@ body {
   padding: 0;
 }
 
-/*#topbar-container > li > a:hover {*/
-
-  /*border-radius: 5px;*/
-/*}*/
-
 #nav-items-container {
   position: relative;
   background: url('/images/escheresque_ste.png');
@@ -98,13 +93,32 @@ body {
   padding: 2px;
   margin: 3px 5px;
 }
-
-.nav-item:hover {
+/*TODO give hovered links a box-shadow effect*/
+.nav-item:hover, #logout-btn:hover {
   margin: 2px 4px;
   color: #ffffff;
   border: 1px solid #d15b31;
   border-radius: 5px;
   background-color: rgba(0,0,0,.4);
+}
+
+#nav-separator {
+  color: #64cfb7;
+}
+
+#logout-form {
+  position: relative;
+}
+
+#logout-btn {
+  position: absolute;
+  top: -25px;
+  left: -2px;
+  color: #0ca2a4;
+  background-color: transparent;
+  font-size: .9em;
+  font-weight: 300;
+  border: none;
 }
 
 .title-div {
@@ -243,7 +257,7 @@ div > a:hover {
   overflow: scroll;
 }
 
-#sign-up-form {
+.sign-up-form {
   max-width: 50%;
   margin: 15px auto;
   display: flex;

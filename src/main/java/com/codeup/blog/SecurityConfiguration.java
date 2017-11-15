@@ -32,7 +32,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
               .permitAll() // Anyone can go to the login page
             .and()
               .authorizeRequests()
-              .antMatchers("/", "/logout", "/posts") // anyone can see the home, logout and posts pages.
+              .antMatchers(
+                      "/",
+                      "/logout",
+                      "/posts"
+              ) // anyone can see the home, logout and posts pages.
               .permitAll()
             .and()
               .logout()
