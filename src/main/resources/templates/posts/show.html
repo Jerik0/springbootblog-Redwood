@@ -3,16 +3,16 @@
 <head th:replace="fragments/head :: head('View Post')">
 </head>
 <body>
-<div th:replace="fragments/navbar :: nav-bar"></div>
-<div th:replace="fragments/titlediv :: titlediv(${post.title})"></div>
+  <div th:replace="fragments/topbar :: top-bar"></div>
+  <div th:replace="fragments/navbar :: nav-bar"></div>
+  <div th:replace="fragments/titlediv :: titlediv(${post.title})"></div>
 
-<h3 th:text="'By ' + ${post.owner.username}"></h3>
-<p th:text="${post.body}"></p>
+  <h3 th:text="'By ' + ${post.owner.username}"></h3>
+  <p th:text="${post.body}"></p>
 
-<form th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
-  <button>Delete</button>
-</form>
-
+  <form th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
+    <button>Delete</button>
+  </form>
 </body>
 <script th:replace="fragments/script :: script"></script>
 </html>

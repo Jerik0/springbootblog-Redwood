@@ -8,7 +8,8 @@ html, body {
 html {
   position: relative;
   min-height: 100%;
-  background: url(/images/congruent_pentagon.png);
+  background: url(/images/arches.png);
+  /*background-color: #d0ffde;*/
 }
 
 body {
@@ -86,8 +87,18 @@ h2 > a:visited {
   color: #eaffff;
 }
 
+div > a {
+  text-decoration: none;
+  color: #eaffff;
+}
+
 div > a:visited {
   color: #eaffff;
+}
+
+div > a:hover {
+  text-shadow: 2px 2px 1px #065051;
+  color: #75edd1;
 }
 
 /*=============NAV BAR STUFF===============*/
@@ -99,7 +110,7 @@ div > a:visited {
   display: flex;
   flex-direction: row;
   padding: 0;
-  box-shadow: 2px 3px 1px #231c18;
+  box-shadow: 0 3px 1px #231c18;
   z-index: 10;
 }
 
@@ -117,7 +128,7 @@ div > a:visited {
 .nav-item:hover {
   margin: 2px 4px;
   color: #ffffff;
-  border: 1px solid #0ca2a4;
+  border: 1px solid #d15b31;
   border-radius: 5px;
 }
 
@@ -126,14 +137,15 @@ div > a:visited {
   position: relative;
   box-sizing: border-box;
   margin: 4px;
-  border-radius: 5px;
+  border-radius: 3px;
   border-style: outset;
-  border-width: 2px;
+  border-width: 1px;
   font-weight: lighter;
   color: #0ca2a4;
   text-align: center;
   padding: 5px;
   background-color: #231c18;
+  /*background: url('images/escheresque_ste.png');*/
   max-width: 33%;
 }
 
@@ -178,7 +190,8 @@ div > a:visited {
 #topbar-container {
   align-items: center;
   position: relative;
-  background-color: #231c18;
+  /*background-color: #9fffb4;*/
+  background: url('images/diagmonds.png');
   margin: 0;
   list-style-type: none;
   display: flex;
@@ -186,15 +199,24 @@ div > a:visited {
   padding: 0;
 }
 
-
 .title-div {
-  color: #ffffff;
-  background-color: #75edd1;
-  border-bottom: 2px dashed #1d2123;
+  background: url('/images/congruent_pentagon.png');
+  /*background-color: #1d2123;*/
 }
 
-.title-div > h1 {
-  color: #231c18;
+#title-div-bg {
+  display: flex;
+  height: 100%;
+  background: linear-gradient(to right, rgba(35, 28, 24, 0.8), rgba(255,255,255,0));
+  align-items: center;
+  border-bottom: 2px dashed #ffffff;
+}
+
+#title-div-bg > h1 {
+  font-weight: lighter;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #ffffff;
   margin-left: 25px;
 }
 
@@ -203,7 +225,7 @@ div > a:visited {
   right: 0;
   bottom: 0;
   position: absolute;
-  min-height: 15%;
+  min-height: 10%;
   min-width: 100%;
   color: #ffffff;
   background-color: #1d2123;
