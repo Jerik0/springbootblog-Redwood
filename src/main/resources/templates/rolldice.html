@@ -3,9 +3,10 @@
 <head th:replace="fragments/head :: head(Dice)">
 </head>
 <body>
+<div th:replace="fragments/topbar :: top-bar"></div>
   <div th:replace="fragments/navbar :: nav-bar"></div>
+  <div th:replace="fragments/titlediv :: titlediv('Pick A Number')"></div>
   <div id="focus-container">
-    <h1>Please Pick a Number</h1>
     <ul id="number-request-container">
       <li>
         <a class="nav-item" href="/roll-dice/1">1</a>

@@ -3,7 +3,9 @@
 <head th:replace="fragments/head :: head(Results)">
 </head>
 <body>
+  <div th:replace="fragments/topbar :: top-bar"></div>
   <div th:replace="fragments/navbar :: nav-bar"></div>
+  <div th:replace="fragments/titlediv :: titlediv('Drumroll...')"></div>
 
   <div id="fail-container" th:if="${notEqual}">
     <h1 th:text="${'Your roll was ' + roll + '. That was too ' + helper + '.'}"></h1>
