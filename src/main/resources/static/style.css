@@ -32,14 +32,29 @@ body {
 }
 
 /*================HOME LOGO================*/
+#logo-container {
+  position: relative;
+}
+
+#home-icon {
+  height: 64px;
+  width: 64px;
+}
+
+#coffee-word, #bomb-word {
+  /*position: absolute;*/
+  font-weight: bold;
+  top: -16px;
+}
+
 #coffee-word {
   color: #75edd1;
-  font-weight: bold;
+  left: 64px;
 }
 
 #bomb-word {
   color: #ed663a;
-  font-weight: bold;
+  left: 155px;
 }
 
 /*=================LINKS===================*/
@@ -76,11 +91,6 @@ div > a:visited {
 }
 
 /*=============NAV BAR STUFF===============*/
-#home-icon {
-  height: 64px;
-  width: 64px;
-}
-
 #nav-items-container {
   position: relative;
   background: url('/images/escheresque_ste.png');
@@ -89,7 +99,7 @@ div > a:visited {
   display: flex;
   flex-direction: row;
   padding: 0;
-  box-shadow: 1px 3px 1px #231c18;
+  box-shadow: 2px 3px 1px #231c18;
   z-index: 10;
 }
 
@@ -166,6 +176,7 @@ div > a:visited {
 
 /*===========ABOVE AND BELOW PAGE===========*/
 #topbar-container {
+  align-items: center;
   position: relative;
   background-color: #231c18;
   margin: 0;
@@ -174,6 +185,7 @@ div > a:visited {
   flex-direction: row;
   padding: 0;
 }
+
 
 .title-div {
   color: #ffffff;
@@ -219,6 +231,10 @@ div > a:visited {
 
 .form-input:focus {
   background-color: #cffff8;
+}
+
+.outset {
+  border-style: groove;
 }
 
 .inset {
