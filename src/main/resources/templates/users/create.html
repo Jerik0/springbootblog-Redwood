@@ -3,18 +3,17 @@
 <head th:replace="fragments/head :: head('Create A User')">
 </head>
 <body>
+<div th:replace="fragments/topbar :: top-bar"></div>
 <div th:replace="fragments/navbar :: nav-bar"></div>
+<div th:replace="fragments/titlediv :: titlediv('Join Us')"></div>
 
-  <div>
-    <form th:action="@{/register}" th:method="post" th:object="${user}">
-      <label for="username">Username</label>
-      <input id="username" th:field="*{username}"/>
+  <div id="form-container">
+    <form id="sign-up-form" th:action="@{/register}" th:method="post" th:object="${user}">
+      <input class="inset rounded form-input" id="username" th:field="*{username}" placeholder="Username"/>
 
-      <label for="email">E-mail Address</label>
-      <input id="email" th:field="*{email}"/>
+      <input class="inset rounded form-input" id="email" th:field="*{email}" placeholder="E-mail"/>
 
-      <label for="password">Password</label>
-      <input id="password" th:field="*{password}"/>
+      <input class="inset rounded form-input" id="password" th:field="*{password}" placeholder="Password"/>
       <button>Sign Me Up!</button>
     </form>
   </div>

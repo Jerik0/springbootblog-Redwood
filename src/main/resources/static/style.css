@@ -18,6 +18,10 @@ body {
   height: 70%;
 }
 
+*:focus {
+  outline: none;
+}
+
 /*===============FONT CLASSES==============*/
 .roboto {
   font-family: 'Roboto', sans-serif;
@@ -192,4 +196,35 @@ div > a:visited {
   color: #ffffff;
   background-color: #1d2123;
   overflow: auto;
+}
+
+/*================FORMS STUFF===============*/
+#form-container {
+  width: 100%;
+  overflow: scroll;
+}
+
+#sign-up-form {
+  max-width: 50%;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  margin: 5px auto;
+  color: #231c18;
+  font-size: 1em;
+}
+
+.form-input:focus {
+  background-color: #cffff8;
+}
+
+.inset {
+  border-style: inset;
+}
+
+.rounded {
+  border-radius: 4px;
 }
