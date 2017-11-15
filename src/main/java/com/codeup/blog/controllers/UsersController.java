@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -38,6 +39,13 @@ public class UsersController {
   @GetMapping("/profile")
   public String showProfile() {
     return "users/profile";
+  }
+
+  @GetMapping("/user/{id}/view")
+  public String showUserPosts(@PathVariable Integer id, Model model) {
+    User user = usersDao.findOne((long) id);
+    model.addAttribute("user", user);
+    return "/posts/userposts";
   }
 
 }
