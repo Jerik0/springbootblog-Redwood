@@ -3,14 +3,14 @@
 <head th:replace="fragments/head :: head('Log In')">
 </head>
 <body>
+  <div th:replace="fragments/topbar :: top-bar"></div>
   <div th:replace="fragments/navbar :: nav-bar"></div>
+  <div th:replace="fragments/titlediv :: titlediv('Login')"></div>
   <div>
-    <form th:action="@{/login}" th:method="post">
-      <label for="username">Username</label>
-      <input id="username" name="username" type="text" />
+    <form th:action="@{/login}" th:method="post" class="form-container">
+      <input id="username" class="form-input inset rounded" name="username" type="text" placeholder="Username" />
 
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" />
+      <input id="password" class="form-input inset rounded" name="password" type="password" placeholder="Password"/>
 
       <input type="submit" value="Log In" />
     </form>

@@ -3,11 +3,10 @@
 <head th:replace="fragments/head :: head('Profile')">
 </head>
 <body>
-<div th:replace="fragments/navbar :: nav-bar"></div>
+  <div th:replace="fragments/topbar :: top-bar"></div>
+  <div th:replace="fragments/navbar :: nav-bar"></div>
+  <div th:replace="fragments/titlediv :: titlediv('Profile')"></div>
 
-<div>
-  This is your profile :D
-</div>
 
 </body>
 <footer th:replace="fragments/footer :: footer"></footer>

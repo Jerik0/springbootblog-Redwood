@@ -3,12 +3,14 @@
 <head th:replace="fragments/head :: head('Edit Post')">
 </head>
 <body>
+  <div th:replace="fragments/topbar :: top-bar"></div>
   <div th:replace="fragments/navbar :: nav-bar"></div>
+  <div th:replace="fragments/titlediv :: titlediv('Edit Your Post')"></div>
   <form th:action="${'/posts/' + post.id + '/edit'}" method="post" th:object="${post}">
 
-    <input th:field="${post.title}"/>
+    <input class="form-input inset rounded" th:field="${post.title}"/>
 
-    <input th:field="${post.body}"/>
+    <input class="form-input inset rounded" th:field="${post.body}"/>
 
     <button>Submit</button>
 

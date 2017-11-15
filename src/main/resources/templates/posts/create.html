@@ -2,13 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head th:replace="fragments/head :: head('Create A Post')"></head>
 <body>
+<div th:replace="fragments/topbar :: top-bar"></div>
 <div th:replace="fragments/navbar :: nav-bar"></div>
+<div th:replace="fragments/titlediv:: titlediv('Create A Post')"></div>
   <div class="content-container">
-    <form th:action="@{/posts/create}" th:method="post" th:object="${post}">
+    <form class="form-container" th:action="@{/posts/create}" th:method="post" th:object="${post}">
 
-      <input th:field="*{title}"/>
+      <input class="form-input inset rounded" th:field="*{title}"/>
 
-      <input th:field="*{body}"/>
+      <input class="form-input inset rounded" th:field="*{body}"/>
 
       <button>Submit</button>
     </form>
