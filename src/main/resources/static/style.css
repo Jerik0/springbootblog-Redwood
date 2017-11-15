@@ -1,8 +1,8 @@
 /*=================GENERAL=================*/
 html, body {
-  font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
   font-size: 1.3em;
+  font-family: 'Roboto', sans-serif;
 }
 
 html {
@@ -18,17 +18,24 @@ body {
   height: 70%;
 }
 
-/*================HOME LOGO================*/
-#coffee-word, #bomb-word {
+/*===============FONT CLASSES==============*/
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.anton {
   font-family: 'Anton', sans-serif;
 }
 
+/*================HOME LOGO================*/
 #coffee-word {
   color: #75edd1;
+  font-weight: bold;
 }
 
 #bomb-word {
   color: #ed663a;
+  font-weight: bold;
 }
 
 /*=================LINKS===================*/
