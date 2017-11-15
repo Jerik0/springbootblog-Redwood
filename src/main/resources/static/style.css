@@ -8,7 +8,7 @@ html, body {
 html {
   position: relative;
   min-height: 100%;
-  background: url(/images/arches.png);
+  background: url(/images/congruent_pentagon.png);
   /*background-color: #d0ffde;*/
 }
 
@@ -58,6 +58,82 @@ body {
   left: 155px;
 }
 
+/*===========ABOVE AND BELOW PAGE===========*/
+#topbar-container {
+  align-items: center;
+  position: relative;
+  /*background: url('images/diagmonds.png');*/
+  background-color: rgba(231,255,193,0.5);
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+#nav-items-container {
+  position: relative;
+  background: url('/images/escheresque_ste.png');
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  box-shadow: 0 3px 1px #231c18;
+  z-index: 10;
+}
+
+#nav-bar {
+  width: 100%;
+}
+
+.nav-item {
+  font-weight: 200;
+  font-size: .85em;
+  padding: 2px;
+  margin: 3px 5px;
+}
+
+.nav-item:hover {
+  margin: 2px 4px;
+  color: #ffffff;
+  border: 1px solid #d15b31;
+  border-radius: 5px;
+}
+
+.title-div {
+  /*background: url('/images/arches.png');*/
+  background-color: #1d2123;
+}
+
+#title-div-bg {
+  display: flex;
+  height: 100%;
+  background: linear-gradient(to right, rgba(201, 255, 221, 0.5), rgba(255,255,255,0));
+  align-items: center;
+  border-bottom: 2px dashed #ffffff;
+}
+
+#title-div-bg > h1 {
+  font-weight: lighter;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #ffffff;
+  margin-left: 25px;
+}
+
+#footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  min-height: 10%;
+  min-width: 100%;
+  color: #ffffff;
+  background-color: #1d2123;
+  overflow: auto;
+}
+
 /*=================LINKS===================*/
 li > a {
   box-sizing: border-box;
@@ -99,37 +175,6 @@ div > a:visited {
 div > a:hover {
   text-shadow: 2px 2px 1px #065051;
   color: #75edd1;
-}
-
-/*=============NAV BAR STUFF===============*/
-#nav-items-container {
-  position: relative;
-  background: url('/images/escheresque_ste.png');
-  margin: 0;
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  box-shadow: 0 3px 1px #231c18;
-  z-index: 10;
-}
-
-#nav-bar {
-  width: 100%;
-}
-
-.nav-item {
-  font-weight: 200;
-  font-size: .85em;
-  padding: 2px;
-  margin: 3px 5px;
-}
-
-.nav-item:hover {
-  margin: 2px 4px;
-  color: #ffffff;
-  border: 1px solid #d15b31;
-  border-radius: 5px;
 }
 
 /*=================POSTS===================*/
@@ -184,52 +229,6 @@ div > a:hover {
 
 #focus-container {
   margin: 0 auto;
-}
-
-/*===========ABOVE AND BELOW PAGE===========*/
-#topbar-container {
-  align-items: center;
-  position: relative;
-  /*background-color: #9fffb4;*/
-  background: url('images/diagmonds.png');
-  margin: 0;
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-}
-
-.title-div {
-  background: url('/images/congruent_pentagon.png');
-  /*background-color: #1d2123;*/
-}
-
-#title-div-bg {
-  display: flex;
-  height: 100%;
-  background: linear-gradient(to right, rgba(35, 28, 24, 0.8), rgba(255,255,255,0));
-  align-items: center;
-  border-bottom: 2px dashed #ffffff;
-}
-
-#title-div-bg > h1 {
-  font-weight: lighter;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  color: #ffffff;
-  margin-left: 25px;
-}
-
-#footer {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  min-height: 10%;
-  min-width: 100%;
-  color: #ffffff;
-  background-color: #1d2123;
-  overflow: auto;
 }
 
 /*================FORMS STUFF===============*/
