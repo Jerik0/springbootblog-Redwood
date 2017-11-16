@@ -2,6 +2,7 @@ package com.codeup.blog.controllers;
 
 import com.codeup.blog.models.User;
 import com.codeup.blog.repositories.UserRepository;
+import com.codeup.blog.svcs.UserSvc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -16,11 +17,13 @@ public class UsersController {
 
   private final UserRepository usersDao;
   private final PasswordEncoder encoder;
+  private final UserSvc usersSvc;
 
   @Autowired
-  public UsersController(UserRepository usersDao, PasswordEncoder encoder) {
+  public UsersController(UserRepository usersDao, PasswordEncoder encoder, UserSvc userSvc) {
     this.usersDao = usersDao;
     this.encoder = encoder;
+    this.usersSvc = userSvc;
   }
 
   @GetMapping("/register")

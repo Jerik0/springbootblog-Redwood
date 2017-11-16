@@ -7,12 +7,21 @@
   <div th:replace="fragments/navbar :: nav-bar"></div>
   <div th:replace="fragments/titlediv :: titlediv(${post.title})"></div>
 
-  <h3 th:text="'By ' + ${post.owner.username}"></h3>
+  <!--<span id="post-owner-name">-->
+    <span id="post-owner-name">By
+      <a th:href="${'/user/' + post.owner.id + '/view'}" th:text="${post.owner.username}"></a>
+    </span>
+  <!--</span>-->
+
   <p th:text="${post.body}"></p>
 
-  <form th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
+  <div sec:authorize="isAuthenticated()">
+    <form th:if="${#authentication.principal.id == post.owner.id}" th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
     <button>Delete</button>
-  </form>
+    </form>
+  </div>
+
+
 </body>
 <script th:replace="fragments/script :: script"></script>
 </html>

@@ -5,6 +5,7 @@ import com.codeup.blog.models.User;
 import com.codeup.blog.repositories.PostsRepository;
 import com.codeup.blog.repositories.UserRepository;
 import com.codeup.blog.svcs.PostSvc;
+import com.codeup.blog.svcs.UserSvc;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -20,12 +21,14 @@ public class PostsController {
   private final PostSvc postSvc;
   private final PostsRepository postsDao;
   private final UserRepository usersDao;
+  private final UserSvc userSvc;
 
   @Autowired
-  public PostsController(PostSvc postSvc, PostsRepository postsDao, UserRepository usersDao) {
+  public PostsController(PostSvc postSvc, PostsRepository postsDao, UserRepository usersDao, UserSvc userSvc) {
     this.postSvc = postSvc;
     this.postsDao = postsDao;
     this.usersDao = usersDao;
+    this.userSvc = userSvc;
   }
 
   @GetMapping("/posts")
@@ -43,7 +46,10 @@ public class PostsController {
 
   @GetMapping("/posts/{id}/edit")
   public String editPost(@PathVariable Integer id, Model model) {
-    model.addAttribute("post", postsDao.findOne((long) id));
+    Post post = postsDao.findOne((long) id);
+    boolean isPostOwner = userSvc.isPostOwner(post);
+    model.addAttribute("post", post);
+    model.addAttribute(isPostOwner);
     return "/posts/edit";
   }
 

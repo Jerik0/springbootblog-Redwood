@@ -54,7 +54,7 @@ body {
 }
 
 #bomb-word {
-  color: #ed663a;
+  color: #ff5166;
   left: 155px;
 }
 
@@ -71,6 +71,7 @@ body {
   padding: 0;
 }
 
+/*TODO Space Login/user links to the right of screen*/
 #nav-items-container {
   position: relative;
   background: url('/images/escheresque_ste.png');
@@ -93,13 +94,14 @@ body {
   padding: 2px;
   margin: 3px 5px;
 }
-/*TODO give hovered links a box-shadow effect*/
+
 .nav-item:hover, #logout-btn:hover {
-  margin: 2px 4px;
-  color: #ffffff;
-  border: 1px solid #d15b31;
-  border-radius: 5px;
-  background-color: rgba(0,0,0,.4);
+  margin: 2px 5px;
+  /*color: #ffffff;*/
+  border-top: 1px solid #d15b31;
+  border-bottom: 1px solid #d15b31;
+  /*border-radius: 5px;*/
+  /*background-color: rgba(0,0,0,.4);*/
 }
 
 #nav-separator {
@@ -134,12 +136,21 @@ body {
   border-bottom: 2px dashed #ffffff;
 }
 
-#title-div-bg > h1 {
+#title-div-bg > h1, #post-owner-name {
   font-weight: lighter;
   margin-top: 5px;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: rgb(231,255,193);
   margin-left: 25px;
+  text-shadow: 2px 2px 2px #000;
+}
+
+/*TODO Fix left margin of h3 element featuring post-owner's name*/
+#post-owner-name {
+  display: inline;
+  margin-top: 0;
+  background: url('images/escheresque_ste.png');
+  box-shadow: 0 3px 1px #231c18;
 }
 
 #footer {
@@ -170,10 +181,6 @@ li > a:visited {
   text-decoration: none;
 }
 
-li > a:hover {
-  color: #ffffff;
-}
-
 h2 > a:link {
   color: #eaffff;
   text-decoration: none;
@@ -195,6 +202,18 @@ div > a:visited {
 div > a:hover {
   text-shadow: 2px 2px 1px #065051;
   color: #75edd1;
+}
+
+#post-owner-name > a {
+  text-decoration: none;
+}
+
+#post-owner-name > a:link {
+  color: #ff5166;
+}
+
+#post-owner-name > a:visited {
+  color: #ff5166;
 }
 
 /*=================POSTS===================*/
