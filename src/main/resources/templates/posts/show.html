@@ -15,8 +15,8 @@
 
   <p th:text="${post.body}"></p>
 
-  <div sec:authorize="isAuthenticated()">
-    <form th:if="${#authentication.principal.id == post.owner.id}" th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
+  <div th:if="${isPostOwner}">
+    <form th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
     <button>Delete</button>
     </form>
   </div>

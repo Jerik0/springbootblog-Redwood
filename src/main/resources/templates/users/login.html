@@ -7,7 +7,7 @@
   <div th:replace="fragments/navbar :: nav-bar"></div>
   <div th:replace="fragments/titlediv :: titlediv('Login')"></div>
   <div class="form-container">
-    <form th:action="@{/login}" th:method="post" class="sign-up-form">
+    <form th:action="@{/login}" th:method="post" class="form">
       <input id="username" class="form-input inset rounded" name="username" type="text" placeholder="Username" />
 
       <input id="password" class="form-input inset rounded" name="password" type="password" placeholder="Password"/>

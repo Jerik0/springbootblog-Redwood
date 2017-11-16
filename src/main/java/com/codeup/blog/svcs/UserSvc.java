@@ -21,9 +21,14 @@ public class UserSvc {
   }
 
   public boolean isPostOwner(Post post) {
-    User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    long loggedInUserId = user.getId();
-    return loggedInUserId == post.getOwner().getId();
+    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    if(principal instanceof String) {
+      return false;
+    }
+    long loggedInUserId = ((User) principal).getId();
+    User owner = post.getOwner();
+    long ownerId = owner.getId();
+    return loggedInUserId == ownerId;
   }
 
 }

@@ -5,14 +5,14 @@
 <div th:replace="fragments/topbar :: top-bar"></div>
 <div th:replace="fragments/navbar :: nav-bar"></div>
 <div th:replace="fragments/titlediv:: titlediv('Create A Post')"></div>
-  <div class="content-container">
-    <form class="form-container" th:action="@{/posts/create}" th:method="post" th:object="${post}">
+  <div class="form-container">
+    <form class="form" th:action="@{/posts/create}" th:method="post" th:object="${post}">
 
       <input class="form-input inset rounded" th:field="*{title}"/>
 
       <input class="form-input inset rounded" th:field="*{body}"/>
 
-      <button>Submit</button>
+      <input type="submit" value="Submit"/>
     </form>
   </div>
   <footer th:replace="fragments/footer :: footer"></footer>

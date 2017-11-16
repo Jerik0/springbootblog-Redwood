@@ -40,6 +40,8 @@ public class PostsController {
   @GetMapping("/posts/{id}")
   public String postsId(@PathVariable Integer id, Model model) {
     Post post = postsDao.findOne((long) id);
+    boolean isPostOwner = userSvc.isPostOwner(post);
+    model.addAttribute("isPostOwner", isPostOwner);
     model.addAttribute("post", post);
     return "/posts/show";
   }
@@ -49,7 +51,7 @@ public class PostsController {
     Post post = postsDao.findOne((long) id);
     boolean isPostOwner = userSvc.isPostOwner(post);
     model.addAttribute("post", post);
-    model.addAttribute(isPostOwner);
+    model.addAttribute("isPostOwner", isPostOwner);
     return "/posts/edit";
   }
 

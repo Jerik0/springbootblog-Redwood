@@ -7,8 +7,8 @@
 <div th:replace="fragments/navbar :: nav-bar"></div>
 <div th:replace="fragments/titlediv :: titlediv('Join Us')"></div>
 
-  <div id="form-container">
-    <form class="sign-up-form" th:action="@{/register}" th:method="post" th:object="${user}">
+  <div class="form-container">
+    <form class="form" th:action="@{/register}" th:method="post" th:object="${user}">
       <input class="inset rounded form-input" id="username" th:field="*{username}" placeholder="Username"/>
 
       <input class="inset rounded form-input" id="email" th:field="*{email}" placeholder="E-mail"/>
