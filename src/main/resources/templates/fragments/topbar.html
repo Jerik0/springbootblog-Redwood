@@ -16,7 +16,7 @@
     </li>
     <li id="nav-separator">|</li>
     <li class="topbar-item" sec:authorize="!isAuthenticated()">
-      <a href="/register">Sign Up</a>
+      <a href="/register">Join Us!</a>
     </li>
     <li sec:authorize="isAuthenticated()">
       <form th:action="@{/logout}" th:method="post" id="logout-form">
