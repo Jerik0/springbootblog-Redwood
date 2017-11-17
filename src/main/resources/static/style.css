@@ -62,16 +62,33 @@ body {
 #topbar-container {
   align-items: center;
   position: relative;
-  /*background: url('images/diagmonds.png');*/
-  background-color: rgba(231,255,193,0.8);
+  background: url('images/diagmonds.png');
+  background-color: rgba(231, 255, 193, 0.8);
   margin: 0;
-  list-style-type: none;
   display: flex;
   flex-direction: row;
   padding: 0;
+  border-bottom: 1px solid #E7FFC1;
 }
 
-#topbar-container > li > a:hover {
+#topbar-list-left, #topbar-list-right {
+  margin: 5px 5px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+}
+
+#topbar-list-right {
+  position: absolute;
+  right: 5px;
+}
+
+.topbar-item-right {
+  position: absolute;
+  right: 0px;
+}
+
+#topbar-container > ul > li > a:hover {
   color: #ff5166;
   border: 0;
 }
