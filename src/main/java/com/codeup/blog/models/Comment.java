@@ -13,6 +13,9 @@ public class Comment {
   @Column(nullable = false)
   private String body;
 
+  @Column
+  private String timestamp;
+
   @ManyToOne
   @JoinColumn(name = "owner_id")
   private User owner;
@@ -50,5 +53,13 @@ public class Comment {
 
   public void setPost(Post post) {
     this.post = post;
+  }
+
+  public String getTimestamp() {
+    return timestamp;
+  }
+
+  public void setTimestamp(String timestamp) {
+    this.timestamp = timestamp;
   }
 }

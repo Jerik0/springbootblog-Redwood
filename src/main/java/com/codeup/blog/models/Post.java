@@ -17,6 +17,9 @@ public class Post {
   @Column(nullable = false)
   private String body;
 
+  @Column
+  private String timestamp;
+
   @ManyToOne
   @JoinColumn(name = "owner_id")
   private User owner;
@@ -28,11 +31,12 @@ public class Post {
 
   }
 
-  public Post(String title, String body, Long id, List<Comment> comments) {
+  public Post(String title, String body, Long id, List<Comment> comments, String timestamp) {
     this.body = body;
     this.title = title;
     this.id = id;
     this.comments = comments;
+    this.timestamp = timestamp;
   }
 
   public Post(String title, String body) {
@@ -78,5 +82,13 @@ public class Post {
 
   public void setComments(List<Comment> comments) {
     this.comments = comments;
+  }
+
+  public String getTimestamp() {
+    return timestamp;
+  }
+
+  public void setTimestamp(String timestamp) {
+    this.timestamp = timestamp;
   }
 }

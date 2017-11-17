@@ -17,6 +17,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Locale;
+
 @Controller
 public class PostsController {
 
@@ -45,7 +51,14 @@ public class PostsController {
   @PostMapping("/posts/create")
   public String postsCreate(@ModelAttribute Post post) {
     User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    Instant instant = Instant.now();
+    DateTimeFormatter formatter =
+            DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
+            .withLocale(Locale.US)
+            .withZone(ZoneId.systemDefault());
+    String timestamp = formatter.format(instant);
     post.setOwner(user);
+    post.setTimestamp(timestamp);
     postsDao.save(post);
     return "redirect:/posts";
   }
