@@ -23,6 +23,9 @@ public class User {
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
   private List<Post> posts;
 
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+  private List<Comment> comments;
+
   public User() {
 
   }
@@ -33,6 +36,7 @@ public class User {
     email = copy.email;
     password = copy.password;
     posts = copy.posts;
+    comments = copy.comments;
   }
 
   public String getEmail() {
@@ -75,5 +79,12 @@ public class User {
     this.posts = posts;
   }
 
+  public List<Comment> getComments() {
+    return comments;
+  }
+
+  public void setComments(List<Comment> comments) {
+    this.comments = comments;
+  }
 
 }

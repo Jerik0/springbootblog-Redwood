@@ -1,6 +1,7 @@
 package com.codeup.blog.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table
@@ -20,14 +21,18 @@ public class Post {
   @JoinColumn(name = "owner_id")
   private User owner;
 
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
+  private List<Comment> comments;
+
   public Post() {
 
   }
 
-  public Post(String title, String body, Long id) {
+  public Post(String title, String body, Long id, List<Comment> comments) {
     this.body = body;
     this.title = title;
     this.id = id;
+    this.comments = comments;
   }
 
   public Post(String title, String body) {
@@ -65,5 +70,13 @@ public class Post {
 
   public void setOwner(User owner) {
     this.owner = owner;
+  }
+
+  public List<Comment> getComments() {
+    return comments;
+  }
+
+  public void setComments(List<Comment> comments) {
+    this.comments = comments;
   }
 }

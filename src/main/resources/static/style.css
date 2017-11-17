@@ -243,6 +243,14 @@ div > a:hover {
   background-color: rgba(35 28 24 0.5);
 }
 
+#post-body {
+
+}
+
+.comment {
+
+}
+
 .owner-container {
   position: relative;
 }

@@ -1,7 +1,9 @@
 package com.codeup.blog.controllers;
 
+import com.codeup.blog.models.Comment;
 import com.codeup.blog.models.Post;
 import com.codeup.blog.models.User;
+import com.codeup.blog.repositories.CommentsRepository;
 import com.codeup.blog.repositories.PostsRepository;
 import com.codeup.blog.repositories.UserRepository;
 import com.codeup.blog.svcs.PostSvc;
@@ -22,15 +24,33 @@ public class PostsController {
   private final PostsRepository postsDao;
   private final UserRepository usersDao;
   private final UserSvc userSvc;
+  private final CommentsRepository commentsDao;
 
   @Autowired
-  public PostsController(PostSvc postSvc, PostsRepository postsDao, UserRepository usersDao, UserSvc userSvc) {
+  public PostsController(PostSvc postSvc, PostsRepository postsDao, UserRepository usersDao, UserSvc userSvc, CommentsRepository commentsDao) {
     this.postSvc = postSvc;
     this.postsDao = postsDao;
     this.usersDao = usersDao;
     this.userSvc = userSvc;
+    this.commentsDao = commentsDao;
   }
 
+  //============CREATION OF POSTS=============
+  @GetMapping("/posts/create")
+  public String showCreateForm(Model model) {
+    model.addAttribute("post", new Post());
+    return "/posts/create";
+  }
+
+  @PostMapping("/posts/create")
+  public String postsCreate(@ModelAttribute Post post) {
+    User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    post.setOwner(user);
+    postsDao.save(post);
+    return "redirect:/posts";
+  }
+
+  //=============READING OF POSTS=============
   @GetMapping("/posts")
   public String posts(Model model) {
     model.addAttribute("posts", postsDao.findAll());
@@ -43,9 +63,13 @@ public class PostsController {
     boolean isPostOwner = userSvc.isPostOwner(post);
     model.addAttribute("isPostOwner", isPostOwner);
     model.addAttribute("post", post);
+    model.addAttribute("comment", new Comment());
+    model.addAttribute("user", usersDao.findOne((long) id));
+    model.addAttribute("comments", commentsDao.findAllById((long) id));
     return "/posts/show";
   }
 
+  //=============UPDATING OF POSTS=============
   @GetMapping("/posts/{id}/edit")
   public String editPost(@PathVariable Integer id, Model model) {
     Post post = postsDao.findOne((long) id);
@@ -64,20 +88,7 @@ public class PostsController {
     return "redirect:/posts";
   }
 
-  @GetMapping("/posts/create")
-  public String showCreateForm(Model model) {
-    model.addAttribute("post", new Post());
-    return "/posts/create";
-  }
-
-  @PostMapping("/posts/create")
-  public String postsCreate(@ModelAttribute Post post) {
-    User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    post.setOwner(user);
-    postsDao.save(post);
-    return "redirect:/posts";
-  }
-
+  //============DELETION OF POSTS==============
   @PostMapping("/posts/{id}/delete")
   public String deletePost(@PathVariable Integer id) {
     postsDao.delete((long) id);
