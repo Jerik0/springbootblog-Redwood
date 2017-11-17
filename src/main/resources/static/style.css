@@ -71,6 +71,11 @@ body {
   padding: 0;
 }
 
+#topbar-container > li > a:hover {
+  color: #ff5166;
+  border: 0;
+}
+
 /*TODO Space Login/user links to the right of screen*/
 #nav-items-container {
   position: relative;
@@ -88,28 +93,23 @@ body {
   width: 100%;
 }
 
-.nav-item {
+.nav-item, .topbar-item {
   font-weight: 200;
   font-size: .85em;
   padding: 2px;
   margin: 3px 5px;
 }
 
-.nav-item:hover, #logout-btn:hover {
+.nav-item:hover {
   margin: 2px 5px;
-  /*color: #ffffff;*/
   border-top: 1px solid #d15b31;
   border-bottom: 1px solid #d15b31;
-  /*border-radius: 5px;*/
-  /*background-color: rgba(0,0,0,.4);*/
+
 }
 
-#nav-separator {
-  color: #64cfb7;
-}
-
-#logout-form {
-  position: relative;
+#logout-btn:hover {
+  color: #ff5166;
+  border-radius: 0;
 }
 
 #logout-btn {
@@ -121,6 +121,14 @@ body {
   font-size: .9em;
   font-weight: 300;
   border: none;
+}
+
+#nav-separator {
+  color: #64cfb7;
+}
+
+#logout-form {
+  position: relative;
 }
 
 .title-div {
