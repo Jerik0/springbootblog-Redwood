@@ -145,14 +145,6 @@ body {
   text-shadow: 2px 2px 2px #000;
 }
 
-/*TODO Fix left margin of h3 element featuring post-owner's name*/
-#post-owner-name {
-  display: inline;
-  margin-top: 0;
-  background: url('images/escheresque_ste.png');
-  box-shadow: 0 3px 1px #231c18;
-}
-
 #footer {
   left: 0;
   right: 0;
@@ -200,8 +192,14 @@ div > a:visited {
 }
 
 div > a:hover {
-  text-shadow: 2px 2px 1px #065051;
-  color: #75edd1;
+}
+
+/*TODO Fix left margin of h3 element featuring post-owner's name*/
+#post-owner-name {
+  display: inline;
+  margin-top: 0;
+  background: url('images/escheresque_ste.png');
+  box-shadow: 0 3px 1px #231c18;
 }
 
 #post-owner-name > a {
@@ -238,6 +236,11 @@ div > a:hover {
   color: #d6fffd;
 }
 
+.post-title:hover {
+  text-shadow: 2px 2px 1px #065051;
+  color: rgb(231,255,193);
+}
+
 .post-tile:hover {
   color: #0fcdd0;
   background-color: rgba(35 28 24 0.5);
@@ -262,6 +265,7 @@ div > a:hover {
 }
 
 .post-owner:hover {
+  color: #ff5166;
   text-shadow: 2px 2px 1px #065051;
 }
 

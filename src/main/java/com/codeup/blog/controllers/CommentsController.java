@@ -34,4 +34,10 @@ public class CommentsController {
     return "redirect:/posts/" + postId;
   }
 
+  @PostMapping("/comments/{commentId}/delete/{postId}")
+  public String deleteComment(@PathVariable Integer commentId, @PathVariable Integer postId) {
+    commentsDao.delete((long) commentId);
+    return "redirect:/posts/" + postId;
+  }
+
 }
