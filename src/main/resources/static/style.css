@@ -346,3 +346,8 @@ div > a:hover {
 .rounded {
   border-radius: 4px;
 }
+
+.text-area {
+  font-size: .8em;
+  resize: none;
+}
