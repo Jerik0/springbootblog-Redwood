@@ -7,31 +7,37 @@
   <div th:replace="fragments/navbar :: nav-bar"></div>
   <div th:replace="fragments/titlediv :: titlediv(${post.title})"></div>
 
-  <!--<span id="post-owner-name">-->
     <span id="post-owner-name">By
       <a th:href="${'/user/' + post.owner.id + '/view'}" th:text="${post.owner.username}"></a>
     </span>
-  <!--</span>-->
 
-  <p id="post-body" th:text="${post.body}"></p>
+  <div id="post-content">
+    <p id="post-body" th:text="${post.body}"></p>
 
-  <div th:if="${isPostOwner}">
-    <form th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
-    <button>Delete</button>
-    </form>
+    <div th:if="${isPostOwner}">
+      <form th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
+        <button>Delete</button>
+      </form>
+    </div>
   </div>
 
-  <form sec:authorize="isAuthenticated()" th:method="post" th:action="${'/comments/' + post.id}" th:object="${comment}">
-    <textarea rows="5" cols="40" placeholder="Comment" th:field="*{body}"></textarea>
-    <input type="submit"/>
-  </form>
+  <div id="comment-submit-bg">
+    <div id="comment-submit-container">
+      <form id="comment-submit-form" sec:authorize="isAuthenticated()" th:method="post" th:action="${'/comments/' + post.id}" th:object="${comment}">
+        <textarea class="comment-entry inset rounded" rows="7" cols="40" placeholder="Comment" th:field="*{body}"></textarea>
+        <input id="comment-submit-btn" type="submit"/>
+      </form>
+    </div>
+  </div>
 
-  <div th:each="comment : ${post.comments}" class="comment">
-    <p th:text="${comment.body}"></p>
-    <span th:text="${comment.timestamp}"></span>
-    <form th:if="${isPostOwner}" th:action="${'/comments/' + comment.id + '/delete/' + post.id}" th:object="${comment}" th:method="post">
-      <button>Delete</button>
-    </form>
+  <div id="comments-container">
+    <div th:each="comment : ${post.comments}" class="comment">
+      <p class="comment-body" th:text="${comment.body}"></p>
+      <span class="timestamp" th:text="${comment.timestamp}"></span>
+      <form th:if="${isPostOwner}" th:action="${'/comments/' + comment.id + '/delete/' + post.id}" th:object="${comment}" th:method="post">
+        <button>Delete</button>
+      </form>
+    </div>
   </div>
 
 </body>

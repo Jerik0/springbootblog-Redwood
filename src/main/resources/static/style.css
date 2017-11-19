@@ -274,11 +274,11 @@ div > a:hover {
   background-color: rgba(35 28 24 0.5);
 }
 
-#post-body {
-
+#post-content {
+  margin: 10px;
 }
 
-.comment {
+#post-body {
 
 }
 
@@ -308,6 +308,51 @@ div > a:hover {
 
 #focus-container {
   margin: 0 auto;
+}
+
+/*================COMMENTS==================*/
+#comments-container {
+  margin: 10px;
+  border: 1px solid #ff5166;
+}
+
+#comment-submit-container {
+  background: linear-gradient(to right, rgba(201, 255, 221, 0.5), rgba(255,255,255,0));
+}
+
+#comment-submit-bg {
+  background-color: #1d2123;
+}
+
+#comment-submit-form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+#comment-submit-btn {
+  width: 30%;
+  margin: 10px;
+}
+
+.comment-entry {
+  margin: 10px;
+  resize: none;
+  font-size: .8em;
+}
+
+.comment {
+  padding: 5px;
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.comment-body {
+  font-size: .9em;
+}
+
+.timestamp {
+  font-size: .6em;
 }
 
 /*================FORMS STUFF===============*/
