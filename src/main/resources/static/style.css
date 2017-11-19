@@ -60,6 +60,7 @@ body {
 
 /*===========ABOVE AND BELOW PAGE===========*/
 #topbar-container {
+  max-width: 100%;
   align-items: center;
   position: relative;
   background: url('images/diagmonds.png');
@@ -80,7 +81,8 @@ body {
 
 #topbar-list-right {
   position: absolute;
-  right: 5px;
+  right: 40px;
+  width: 200px;
 }
 
 .topbar-item-right {
@@ -131,13 +133,14 @@ body {
 
 #logout-btn {
   position: absolute;
-  top: -25px;
+  top: -10px;
   left: -2px;
   color: #0ca2a4;
   background-color: transparent;
-  font-size: .9em;
+  font-size: 1em;
   font-weight: 300;
   border: none;
+  margin-left: 0;
 }
 
 #nav-separator {

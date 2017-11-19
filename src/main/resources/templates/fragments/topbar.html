@@ -16,11 +16,11 @@
     <li class="topbar-item" sec:authorize="!isAuthenticated()">
       <a href="/login">Log In</a>
     </li>
-    <li id="nav-separator">|</li>
+    <li id="nav-separator" class="topbar-item">|</li>
     <li class="topbar-item" sec:authorize="!isAuthenticated()">
       <a href="/register">Join Us!</a>
     </li>
-    <li sec:authorize="isAuthenticated()">
+    <li sec:authorize="isAuthenticated()" class="topbar-item">
       <form th:action="@{/logout}" th:method="post" id="logout-form">
         <button id="logout-btn" style="margin-top: 8px">Logout</button>
       </form>
