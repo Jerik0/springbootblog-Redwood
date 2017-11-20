@@ -16,7 +16,7 @@
 
     <div th:if="${isPostOwner}">
       <form th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
-        <button>Delete</button>
+        <button class="user-button">Delete</button>
       </form>
     </div>
   </div>
@@ -33,10 +33,13 @@
   <div id="comments-container">
     <div th:each="comment : ${post.comments}" class="comment">
       <p class="comment-body" th:text="${comment.body}"></p>
-      <span class="timestamp" th:text="${comment.timestamp}"></span>
-      <form th:if="${isPostOwner}" th:action="${'/comments/' + comment.id + '/delete/' + post.id}" th:object="${comment}" th:method="post">
-        <button>Delete</button>
-      </form>
+
+      <div class="comment-bottom-container">
+        <span class="timestamp" th:text="${comment.timestamp}"></span>
+        <form class="comment-delete-btn" th:if="${isPostOwner}" th:action="${'/comments/' + comment.id + '/delete/' + post.id}" th:object="${comment}" th:method="post">
+          <button class="user-button">Delete</button>
+        </form>
+      </div>
     </div>
   </div>
 
