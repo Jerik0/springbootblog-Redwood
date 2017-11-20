@@ -2,14 +2,13 @@
 html, body {
   box-sizing: border-box;
   font-size: 1.3em;
-  font-family: 'Slim-Joe', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 @font-face {
   src: url('images/slim-joe.otf');
   font-family: 'Slim-Joe';
 }
-
 
 html {
   position: relative;
@@ -31,6 +30,10 @@ body {
 /*===============FONT CLASSES==============*/
 .roboto {
   font-family: 'Roboto', sans-serif;
+}
+
+.slim-joe {
+  font-family: 'Slim-Joe', 'sans-serif';
 }
 
 .anton {
@@ -66,7 +69,9 @@ body {
 
 /*===========ABOVE AND BELOW PAGE===========*/
 #topbar-container {
+  font-family: 'Slim-Joe', 'sans-serif';
   font-size: .7em;
+  font-weight: 600;
   max-width: 100%;
   align-items: center;
   position: relative;
@@ -104,6 +109,7 @@ body {
 
 /*TODO Space Login/user links to the right of screen*/
 #nav-items-container {
+  font-family: 'Slim-Joe', 'sans-serif';
   position: relative;
   background: url('/images/escheresque_ste.png');
   margin: 0;
@@ -136,13 +142,13 @@ body {
 }
 
 #logout-btn {
+  font-family: 'Slim-Joe', 'sans-serif';
   position: absolute;
-  top: -10px;
-  left: -2px;
+  top: -2px;
+  left: -4px;
   color: #0ca2a4;
   background-color: transparent;
   font-size: 1em;
-  font-weight: 300;
   border: none;
   margin-left: 0;
 }
@@ -330,7 +336,7 @@ div > a:hover {
 #comments-container {
   background: url('images/diagmonds.png');
   margin: 10px;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 #comment-submit-container {

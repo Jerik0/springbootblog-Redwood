@@ -11,7 +11,7 @@
   </ul>
   <ul id="topbar-list-right">
     <li class="topbar-item" sec:authorize="isAuthenticated()">
-      <a href="/profile">Profile</a>
+      <a href="/profile" th:text="${#authentication.principal.username}"></a>
     </li>
     <li class="topbar-item" sec:authorize="!isAuthenticated()">
       <a href="/login">Log In</a>
@@ -22,7 +22,7 @@
     </li>
     <li sec:authorize="isAuthenticated()" class="topbar-item">
       <form th:action="@{/logout}" th:method="post" id="logout-form">
-        <button id="logout-btn" style="margin-top: 8px">Logout</button>
+        <button id="logout-btn">Logout</button>
       </form>
     </li>
   </ul>
