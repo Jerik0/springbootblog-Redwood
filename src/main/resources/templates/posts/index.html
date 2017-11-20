@@ -9,8 +9,9 @@
 
   <div class="content-container">
     <div th:each="post : ${posts}" class="post-tile">
-        <a class="post-title" th:href="${'/posts/' + post.id}" th:text="${post.title}"></a>
         <a class="post-owner" th:href="${'/user/' + post.owner.id + '/view'}" th:text="${post.owner.username}"></a>
+        <a class="post-title" th:href="${'/posts/' + post.id}" th:text="${post.title}"></a>
+      <span class="post-title-timestamp" th:text="${post.timestamp}"></span>
     </div>
   </div>
   <footer th:replace="fragments/footer :: footer"></footer>

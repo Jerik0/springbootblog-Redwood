@@ -13,9 +13,9 @@
 
   <div id="post-content">
     <p id="post-body" th:text="${post.body}"></p>
-
-    <div th:if="${isPostOwner}">
-      <form th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
+    <div class="comment-bottom-container">
+      <span class="timestamp" th:text="${post.timestamp}"></span>
+      <form class="comment-delete-btn" th:if="${isPostOwner}" th:action="${'/posts/' + post.id + '/delete'}" th:object="${post}" th:method="post">
         <button class="user-button">Delete</button>
       </form>
     </div>

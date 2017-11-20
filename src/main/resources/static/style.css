@@ -10,14 +10,12 @@ html {
   min-height: 100%;
   background: url(/images/congruent_pentagon.png);
   background-attachment: fixed;
-  /*background-color: #d0ffde;*/
 }
 
 body {
-  margin: 0;
   display: flex;
   flex-direction: column;
-  height: 70%;
+  margin: 0 0 100px 0;
 }
 
 *:focus {
@@ -172,16 +170,18 @@ body {
   padding: 5px;
 }
 
+.content-container {
+  overflow: auto;
+}
+
 #footer {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: absolute;
-  min-height: 10%;
+  position: fixed;
+  bottom: 0px;
+  min-height: 100px;
   min-width: 100%;
   color: #ffffff;
   background-color: #1d2123;
-  overflow: auto;
+  clear: both;
 }
 
 /*=================LINKS===================*/
@@ -245,7 +245,7 @@ div > a:hover {
 .post-tile {
   position: relative;
   box-sizing: border-box;
-  margin: 4px;
+  margin: 4px auto;
   border-radius: 3px;
   border-style: outset;
   border-width: 1px;
@@ -254,13 +254,15 @@ div > a:hover {
   text-align: center;
   padding: 5px;
   background-color: #231c18;
-  /*background: url('images/escheresque_ste.png');*/
+  display: flex;
+  flex-direction: row;
   max-width: 33%;
 }
 
 .post-title {
   text-decoration: none;
   color: #d6fffd;
+  margin: 0 auto;
 }
 
 .post-title:hover {
@@ -277,7 +279,7 @@ div > a:hover {
   position: relative;
   border: 2px solid #1d2123;
   padding: 5px;
-  background-color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.6);
   margin: 10px;
 }
 
@@ -286,14 +288,15 @@ div > a:hover {
   margin-top: 0;
 }
 
+.post-title-timestamp {
+  font-size: .5em;
+}
+
 .owner-container {
   position: relative;
 }
 
 .post-owner {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
 }
 
 .post-owner:hover {
