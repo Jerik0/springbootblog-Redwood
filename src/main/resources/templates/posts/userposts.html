@@ -3,15 +3,17 @@
 <head th:replace="fragments/head :: head('Posts')">
 </head>
 <body>
-<div th:replace="fragments/topbar :: top-bar"></div>
-<div th:replace="fragments/navbar :: nav-bar"></div>
-<div th:replace="fragments/titlediv :: titlediv('Posts by ' + ${user.username})"></div>
+  <div th:replace="fragments/topbar :: top-bar"></div>
+  <div th:replace="fragments/navbar :: nav-bar"></div>
+  <div th:replace="fragments/titlediv :: titlediv('Posts by ' + ${user.username})"></div>
 
-<div th:each="post : ${user.posts}">
-  <span th:text="${post.owner.username}"></span>
-  <span th:text="${post.title}"></span>
-  <span th:text="${post.body}"></span>
-</div>
+  <div class="content-container">
+    <div class="post-tile" th:each="post : ${user.posts}">
+      <span class="" th:text="${post.owner.username}"></span>
+      <a class="post-title" th:href="${'/posts/' + post.id}" th:text="${post.title}"></a>
+      <span class="post-title-timestamp" th:text="${post.timestamp}"></span>
+    </div>
+  </div>
 
 </body>
 <footer th:replace="fragments/footer :: footer"></footer>

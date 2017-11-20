@@ -2,8 +2,14 @@
 html, body {
   box-sizing: border-box;
   font-size: 1.3em;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Slim-Joe', sans-serif;
 }
+
+@font-face {
+  src: url('images/slim-joe.otf');
+  font-family: 'Slim-Joe';
+}
+
 
 html {
   position: relative;
@@ -42,8 +48,9 @@ body {
 }
 
 #coffee-word, #bomb-word {
-  /*position: absolute;*/
-  font-weight: bold;
+  text-shadow: 2px 1px 1px #ff5166;
+  position: absolute;
+  /*font-weight: bold;*/
   top: -16px;
 }
 
@@ -53,12 +60,13 @@ body {
 }
 
 #bomb-word {
-  color: #ff5166;
-  left: 155px;
+  color: #E7FFC1;
+  left: 130px;
 }
 
 /*===========ABOVE AND BELOW PAGE===========*/
 #topbar-container {
+  font-size: .7em;
   max-width: 100%;
   align-items: center;
   position: relative;
@@ -175,8 +183,9 @@ body {
 }
 
 #footer {
+  padding: 5px;
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   min-height: 100px;
   min-width: 100%;
   color: #ffffff;
@@ -256,7 +265,7 @@ div > a:hover {
   background-color: #231c18;
   display: flex;
   flex-direction: row;
-  max-width: 33%;
+  max-width: 50%;
 }
 
 .post-title {
