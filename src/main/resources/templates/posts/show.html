@@ -25,7 +25,7 @@
     <div id="comment-submit-container">
       <form id="comment-submit-form" sec:authorize="isAuthenticated()" th:method="post" th:action="${'/comments/' + post.id}" th:object="${comment}">
         <textarea class="comment-entry inset rounded" rows="7" cols="40" placeholder="Comment" th:field="*{body}"></textarea>
-        <input id="comment-submit-btn" type="submit"/>
+        <input class="user-submit-btn" id="comment-submit-btn" type="submit"/>
       </form>
     </div>
   </div>

@@ -325,14 +325,13 @@ div > a:hover {
 }
 
 #comment-submit-container {
-  background: linear-gradient(to right, rgba(201, 255, 221, 0.5), rgba(255,255,255,0));
+  background: linear-gradient(to right, rgba(201, 255, 221, 0.8), rgba(255,255,255,0));
 }
 
 #comment-submit-bg {
   border: 2px solid #1d2123;
-  margin: 10px;
-  margin-bottom: 0px;
-  background-color: #1d2123;
+  margin: 10px 10px 0 10px;
+  background-color: rgba(29, 33, 25, 0.8);
 }
 
 #comment-submit-form {
@@ -415,7 +414,7 @@ div > a:hover {
 }
 
 .form-input:focus {
-  background-color: #cffff8;
+  background-color: #e7ffc1;
 }
 
 .outset {
@@ -433,4 +432,15 @@ div > a:hover {
 .text-area {
   font-size: .8em;
   resize: none;
+}
+
+.user-submit-btn {
+  background: url('images/diagmonds.png');
+  color: #ffffff;
+  font-size: 1em;
+}
+
+.user-submit-btn:hover {
+  color: #e7ffc1;
+  text-shadow: 2px 2px 1px #065051;
 }
