@@ -10,7 +10,7 @@
   const navContainer = $('#nav-items-container');
   const topBarItems = $('.topbar-item');
   const userLinksContainer = $('#user-links-container');
-  const userStatus = $('#user-status')[0].innerHTML;
+  const userStatus = $('#user-status').text();
 
   //Check each post title. If title is longer than 18 chars, replace remaining chars with "..."
   postTitle.each(function() {
@@ -40,7 +40,7 @@
   });
 
   console.log(userStatus);
-  //If theres not a user (thus no comment-submit form), change submit form bg to none.
+  // If theres not a user (thus no comment-submit form), change submit form bg to none.
   if(userStatus == "false") {
     console.log('No user!');
     $('#comment-submit-bg').css('border', 'none');
