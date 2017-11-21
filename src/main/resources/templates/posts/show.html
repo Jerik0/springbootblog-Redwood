@@ -35,7 +35,8 @@
       <p class="comment-body" th:text="${comment.body}"></p>
 
       <div class="comment-bottom-container">
-        <span class="timestamp" th:text="${comment.timestamp}"></span>
+        <span class="comment-info" th:text="${comment.timestamp}"></span>
+        <span class="comment-info" th:text="'By ' + ${comment.owner.username}"></span>
         <form class="comment-delete-btn" th:if="${isPostOwner}" th:action="${'/comments/' + comment.id + '/delete/' + post.id}" th:object="${comment}" th:method="post">
           <button class="user-button">Delete</button>
         </form>
