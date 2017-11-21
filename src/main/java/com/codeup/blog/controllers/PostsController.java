@@ -74,7 +74,9 @@ public class PostsController {
   public String postsId(@PathVariable Integer id, Model model) {
     Post post = postsDao.findOne((long) id);
     boolean isPostOwner = userSvc.isPostOwner(post);
+    boolean isLoggedIn = userSvc.isLoggedIn();
     model.addAttribute("isPostOwner", isPostOwner);
+    model.addAttribute("isLoggedIn", isLoggedIn);
     model.addAttribute("post", post);
     model.addAttribute("comment", new Comment());
     model.addAttribute("user", usersDao.findOne((long) id));

@@ -31,4 +31,9 @@ public class UserSvc {
     return loggedInUserId == ownerId;
   }
 
+  public boolean isLoggedIn() {
+    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    return principal instanceof User;
+  }
+
 }
