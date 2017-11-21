@@ -64,7 +64,7 @@ body {
 
 #bomb-word {
   color: #E7FFC1;
-  left: 130px;
+  left: 140px;
 }
 
 /*===========ABOVE AND BELOW PAGE===========*/
@@ -99,7 +99,7 @@ body {
 
 .topbar-item-right {
   position: absolute;
-  right: 0px;
+  right: 0;
 }
 
 #topbar-container > ul > li > a:hover {
@@ -458,4 +458,22 @@ div > a:hover {
 .user-submit-btn:hover {
   color: #e7ffc1;
   text-shadow: 2px 2px 1px #065051;
+}
+
+.sticky {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+}
+
+#user-links-container {
+  font-family: 'Slim-Joe', 'sans-serif';
+  display: flex;
+  flex-direction: row;
+  z-index: 11111;
+  list-style-type: none;
+  position: absolute;
+  right: 120px;
+  top: 0;
+  margin: 0;
 }

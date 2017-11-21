@@ -4,8 +4,12 @@
 
   const postTitle = $('.post-title');
   const postTitleTimestamp = $('.post-title-timestamp');
-  const userLinks = $('#topbar-list-right').get(0);
+  const userLinks = $('#topbar-list-right');
   const topBar = $('#topbar-container');
+  const navBar = $('#nav-bar');
+  const navContainer = $('#nav-items-container');
+  const topBarItems = $('.topbar-item');
+  const userLinksContainer = $('#user-links-container');
 
   //Check each post title. If title is longer than 18 chars, replace remaining chars with "..."
   postTitle.each(function() {
@@ -21,24 +25,19 @@
     this.innerText = this.innerText.replace(replaceString, "");
   });
 
-  //TEST LOGS
-  // console.log(topBar.offset().top - $(document).scrollTop());
-  console.log('ScrollTop() : ' + $(document).scrollTop());
-  console.log('userLinks:');
-  console.log(userLinks);
-  console.log('===========');
-  console.log('topBar: ');
-  console.log(topBar);
-  console.log('===========');
+  //When topbar is no longer on screen, fix navbar to top of screen.
+  $(window).scroll(function() {
+    if(topBar.offset().top - $(window).scrollTop() <= -83) {
+      navBar.addClass('sticky');
+      topBarItems.appendTo(userLinksContainer);
+    }
 
-  //When topbar is no longer on screen, move user links to navbar.
-  if((topBar.offset().top - $(window).scrollTop()) <= -85) {
-    userLinks.css({
-      "position": "absolute",
-      "top": "100px"
-    });
-    console.log(userLinks.css());
-    console.log('well, this log is working at least...');
-  }
+    if(topBar.offset().top - $(window).scrollTop() > -83) {
+      topBarItems.appendTo(userLinks);
+      navBar.removeClass('sticky');
+    }
+  });
+
+
 
 })();
