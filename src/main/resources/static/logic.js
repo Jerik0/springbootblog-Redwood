@@ -30,6 +30,7 @@
   $(window).scroll(function() {
     if(topBar.offset().top - $(window).scrollTop() <= -83) {
       navBar.addClass('sticky');
+      $('#logout-btn').css("position", "relative");
       topBarItems.appendTo(userLinksContainer);
     }
 

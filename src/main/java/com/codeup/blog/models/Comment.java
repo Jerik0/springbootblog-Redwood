@@ -21,7 +21,19 @@ public class Comment {
   private User owner;
 
   @ManyToOne
+  @JoinColumn(name = "post_id")
   private Post post;
+
+  public Comment() {
+
+  }
+
+  public Comment(String body, String timestamp, User owner, Post post) {
+    this.body = body;
+    this.timestamp = timestamp;
+    this.owner = owner;
+    this.post = post;
+  }
 
   public Long getId() {
     return id;

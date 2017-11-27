@@ -80,7 +80,7 @@ public class PostsController {
     model.addAttribute("post", post);
     model.addAttribute("comment", new Comment());
     model.addAttribute("user", usersDao.findOne((long) id));
-    model.addAttribute("comments", commentsDao.findAllById((long) id));
+    model.addAttribute("comments", commentsDao.sortAllByTime(id));
     return "/posts/show";
   }
 

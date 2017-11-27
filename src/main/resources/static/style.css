@@ -473,7 +473,7 @@ div > a:hover {
   z-index: 11111;
   list-style-type: none;
   position: absolute;
-  right: 120px;
+  right: 0;
   top: 0;
   margin: 0;
 }

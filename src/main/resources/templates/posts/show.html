@@ -31,7 +31,7 @@
   </div>
 
   <div id="comments-container">
-    <div th:each="comment : ${post.comments}" class="comment">
+    <div th:each="comment : ${comments}" class="comment">
       <p class="comment-body" th:text="${comment.body}"></p>
 
       <div class="comment-bottom-container">
