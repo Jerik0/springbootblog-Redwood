@@ -41,4 +41,13 @@ public class UserSvc {
     }
     return ((User) principal).getId();
   }
+
+  public User getLoggedInUser() {
+    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    if(principal instanceof String) {
+      return null;
+    }
+    long id = getLoggedInUserId();
+    return usersDao.findOne(id);
+  }
 }

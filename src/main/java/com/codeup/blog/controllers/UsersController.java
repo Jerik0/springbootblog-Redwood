@@ -4,7 +4,6 @@ import com.codeup.blog.models.User;
 import com.codeup.blog.repositories.UserRepository;
 import com.codeup.blog.svcs.UserSvc;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,22 +37,22 @@ public class UsersController {
   }
 
   @GetMapping("/profile")
-  public String showProfile() {
+  public String showProfile(Model model) {
+    User user = usersSvc.getLoggedInUser();
+    model.addAttribute("user", user);
     return "users/profile";
   }
 
   @GetMapping("/user/{id}/view")
   public String showUserPosts(@PathVariable Integer id, Model model) {
-    User user = usersDao.findOne((long) id);
+    User user = usersSvc.getLoggedInUser();
     model.addAttribute("user", user);
     return "/posts/userposts";
   }
 
   @PostMapping("/upload")
   public String uploadImage(@RequestParam("imageUrl") String imageUrl, Model model) {
-    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    long userId = ((User) principal).getId();
-    User user = usersDao.findOne(userId);
+    User user = usersSvc.getLoggedInUser();
     user.setImagePath(imageUrl);
     usersDao.save(user);
     model.addAttribute("imageUrl");

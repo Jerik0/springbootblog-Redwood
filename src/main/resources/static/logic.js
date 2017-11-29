@@ -13,6 +13,7 @@
   const userStatus = $('#user-status').text();
   const uploadButton = $('#upload-button');
   const imageUrlInput = $('#imageUrl');
+  const userImage = $('.user-image-display');
 
   //Check each post title. If title is longer than 18 chars, replace remaining chars with "..."
   postTitle.each(function() {
@@ -53,12 +54,10 @@
 
   uploadButton.click(function() {
     const client = filestack.init('A5qa4IdqgTea0Y1rOX5qkz');
-    const links = document.getElementById('links');
 
     const addLink = function(file) {
-      const link = document.createElement('img');
-      link.src = file.url;
-      links.appendChild(link);
+      userImage.src = file.url;
+      // links.appendChild(link);
     };
 
     client.pick({

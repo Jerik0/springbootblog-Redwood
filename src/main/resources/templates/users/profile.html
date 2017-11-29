@@ -8,10 +8,13 @@
   <div th:replace="fragments/titlediv :: titlediv('Profile')"></div>
 
   <div id="upload-container">
-    <div id="links"></div>
+    <div id="links">
+      <img class="user-image-display" th:src="${user.imagePath}" th:if="${user.imagePath}"/>
+      <img class="user-image-display" th:src="@{images/student.svg}" th:if="!${user.imagePath}"/>
+    </div>
     <button class="image-upload-button" id="upload-button">Upload</button>
 
-    <form th:action="${'/upload'}">
+    <form th:action="${'/upload'}" th:method="post">
       <input th:type="hidden" id="imageUrl" name="imageUrl" />
       <button class="image-upload-button" th:text="Save"></button>
     </form>
