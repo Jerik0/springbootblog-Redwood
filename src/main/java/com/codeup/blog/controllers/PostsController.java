@@ -73,6 +73,7 @@ public class PostsController {
   @GetMapping("/posts/{id}")
   public String postsId(@PathVariable Integer id, Model model) {
     Post post = postsDao.findOne((long) id);
+    User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     boolean isPostOwner = userSvc.isPostOwner(post);
     boolean isLoggedIn = userSvc.isLoggedIn();
     model.addAttribute("isPostOwner", isPostOwner);
@@ -80,6 +81,7 @@ public class PostsController {
     model.addAttribute("post", post);
     model.addAttribute("comment", new Comment());
     model.addAttribute("user", usersDao.findOne((long) id));
+    model.addAttribute("userId", user.getId());
     model.addAttribute("comments", commentsDao.sortAllByTime(id));
     return "/posts/show";
   }

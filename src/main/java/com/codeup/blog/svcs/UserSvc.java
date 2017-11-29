@@ -25,15 +25,12 @@ public class UserSvc {
     if(principal instanceof String) {
       return false;
     }
-    long loggedInUserId = ((User) principal).getId();
-    User owner = post.getOwner();
-    long ownerId = owner.getId();
-    return loggedInUserId == ownerId;
+    long ownerId = post.getOwner().getId();
+    return ((User) principal).getId() == ownerId;
   }
 
   public boolean isLoggedIn() {
     Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     return principal instanceof User;
   }
-
 }
