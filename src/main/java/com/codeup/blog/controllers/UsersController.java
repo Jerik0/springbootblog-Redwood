@@ -59,4 +59,12 @@ public class UsersController {
     return "redirect:/profile";
   }
 
+  @PostMapping("/image/delete")
+  public String deleteImage() {
+    User user = usersSvc.getLoggedInUser();
+    user.setImagePath(null);
+    usersDao.save(user);
+    return "redirect:/profile";
+  }
+
 }

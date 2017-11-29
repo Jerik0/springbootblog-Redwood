@@ -51,7 +51,6 @@
   }
 
   //==========FILESTACK UPLOADING===========
-
   uploadButton.click(function() {
     const client = filestack.init('A5qa4IdqgTea0Y1rOX5qkz');
 
@@ -65,6 +64,7 @@
       fromSources:  ['local_file_system','facebook','googledrive','instagram','dropbox','imagesearch','webcam',],
       maxSize: 1024*2024,
       maxFiles: 3,
+      // transformations: { crop: true },
     }).then(
         function(result) {
           const fileUrl = result.filesUploaded[0].url;

@@ -18,6 +18,9 @@
       <input th:type="hidden" id="imageUrl" name="imageUrl" />
       <button class="image-upload-button" th:text="Save"></button>
     </form>
+    <form th:action="${'/image/delete'}" th:method="post">
+      <button th:text="Delete"></button>
+    </form>
   </div>
 
 </body>
