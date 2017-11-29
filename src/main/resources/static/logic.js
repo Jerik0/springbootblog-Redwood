@@ -11,6 +11,8 @@
   const topBarItems = $('.topbar-item');
   const userLinksContainer = $('#user-links-container');
   const userStatus = $('#user-status').text();
+  const uploadButton = $('#upload-button');
+  const imageUrlInput = $('#imageUrl');
 
   //Check each post title. If title is longer than 18 chars, replace remaining chars with "..."
   postTitle.each(function() {
@@ -46,5 +48,32 @@
     console.log('No user!');
     $('#comment-submit-bg').css('border', 'none');
   }
+
+  //==========FILESTACK UPLOADING===========
+
+  uploadButton.click(function() {
+    const client = filestack.init('A5qa4IdqgTea0Y1rOX5qkz');
+    const links = document.getElementById('links');
+
+    const addLink = function(file) {
+      const link = document.createElement('img');
+      link.src = file.url;
+      links.appendChild(link);
+    };
+
+    client.pick({
+      accept: 'image/*',
+      fromSources:  ['local_file_system','facebook','googledrive','instagram','dropbox','imagesearch','webcam',],
+      maxSize: 1024*2024,
+      maxFiles: 3,
+    }).then(
+        function(result) {
+          const fileUrl = result.filesUploaded[0].url;
+          imageUrlInput.val(fileUrl);
+          result.filesUploaded.forEach(function(file) {
+            addLink(file)
+          });
+        });
+  });
 
 })();

@@ -73,7 +73,6 @@ public class PostsController {
   @GetMapping("/posts/{id}")
   public String postsId(@PathVariable Integer id, Model model) {
     Post post = postsDao.findOne((long) id);
-    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     boolean isPostOwner = userSvc.isPostOwner(post);
     boolean isLoggedIn = userSvc.isLoggedIn();
     model.addAttribute("isPostOwner", isPostOwner);

@@ -20,6 +20,9 @@ public class User {
   @Column(nullable = false)
   private String password;
 
+  @Column()
+  private String imagePath;
+
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
   private List<Post> posts;
 
@@ -85,6 +88,14 @@ public class User {
 
   public void setComments(List<Comment> comments) {
     this.comments = comments;
+  }
+
+  public String getImagePath() {
+    return imagePath;
+  }
+
+  public void setImagePath(String imagePath) {
+    this.imagePath = imagePath;
   }
 
 }

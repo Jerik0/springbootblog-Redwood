@@ -4,13 +4,11 @@ import com.codeup.blog.models.User;
 import com.codeup.blog.repositories.UserRepository;
 import com.codeup.blog.svcs.UserSvc;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class UsersController {
@@ -49,6 +47,17 @@ public class UsersController {
     User user = usersDao.findOne((long) id);
     model.addAttribute("user", user);
     return "/posts/userposts";
+  }
+
+  @PostMapping("/upload")
+  public String uploadImage(@RequestParam("imageUrl") String imageUrl, Model model) {
+    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    long userId = ((User) principal).getId();
+    User user = usersDao.findOne(userId);
+    user.setImagePath(imageUrl);
+    usersDao.save(user);
+    model.addAttribute("imageUrl");
+    return "redirect:/profile";
   }
 
 }

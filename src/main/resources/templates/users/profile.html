@@ -7,6 +7,15 @@
   <div th:replace="fragments/navbar :: nav-bar"></div>
   <div th:replace="fragments/titlediv :: titlediv('Profile')"></div>
 
+  <div id="upload-container">
+    <div id="links"></div>
+    <button class="image-upload-button" id="upload-button">Upload</button>
+
+    <form th:action="${'/upload'}">
+      <input th:type="hidden" id="imageUrl" name="imageUrl" />
+      <button class="image-upload-button" th:text="Save"></button>
+    </form>
+  </div>
 
 </body>
 <footer th:replace="fragments/footer :: footer"></footer>
