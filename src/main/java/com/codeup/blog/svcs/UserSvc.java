@@ -33,4 +33,12 @@ public class UserSvc {
     Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     return principal instanceof User;
   }
+
+  public long getLoggedInUserId() {
+    Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    if(principal instanceof String) {
+      return 0;
+    }
+    return ((User) principal).getId();
+  }
 }
