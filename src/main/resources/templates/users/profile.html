@@ -5,22 +5,24 @@
 <body>
   <div th:replace="fragments/topbar :: top-bar"></div>
   <div th:replace="fragments/navbar :: nav-bar"></div>
-  <div th:replace="fragments/titlediv :: titlediv('Profile')"></div>
+  <div th:replace="fragments/titlediv :: titlediv(${'Welcome, ' + user.username})"></div>
 
   <div id="upload-container">
     <div id="links">
       <img class="user-image-display" th:src="${user.imagePath}" th:if="${user.imagePath}"/>
       <img class="user-image-display" th:src="@{images/student.svg}" th:if="!${user.imagePath}"/>
     </div>
-    <button class="image-upload-button" id="upload-button">Upload</button>
+    <div id="upload-button-container">
+      <button class="image-upload-button" id="upload-button">UPLOAD</button>
 
-    <form th:action="${'/upload'}" th:method="post">
-      <input th:type="hidden" id="imageUrl" name="imageUrl" />
-      <button class="image-upload-button" th:text="Save"></button>
-    </form>
-    <form th:action="${'/image/delete'}" th:method="post">
-      <button th:text="Delete"></button>
-    </form>
+      <form th:action="${'/upload'}" th:method="post">
+        <input th:type="hidden" id="imageUrl" name="imageUrl" />
+        <button class="image-upload-button" th:text="SAVE"></button>
+      </form>
+      <form th:action="${'/image/delete'}" th:method="post">
+        <button class="image-upload-button" th:text="DELETE"></button>
+      </form>
+    </div>
   </div>
 
 </body>

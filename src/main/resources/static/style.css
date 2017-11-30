@@ -484,6 +484,10 @@ div > a:hover {
   background-color: #1d2123;
   padding: 10px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 1px solid red;
 }
 
 #links {
@@ -492,8 +496,20 @@ div > a:hover {
   border: 1px dashed #ffffff;
   border-radius: 50%;
   overflow: hidden;
+  margin: 5px auto;
 }
 
 .image-upload-button {
+  border-radius: 8px;
+  background-color: #1d2123;
+  color: #E7FFC1;
+  border: 1px solid red;
+  margin: 5px;
+  padding: 5px;
+}
 
+#upload-button-container {
+  display: flex;
+  flex-direction: row;
+  margin: 5px auto;
 }
