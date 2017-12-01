@@ -53,10 +53,11 @@
   //==========FILESTACK UPLOADING===========
   uploadButton.click(function() {
     const client = filestack.init('A5qa4IdqgTea0Y1rOX5qkz');
+    const tempDisplay = $('#temp-display');
 
     const addLink = function(file) {
       userImage.src = file.url;
-      // links.appendChild(link);
+      tempDisplay.src = file.url;
     };
 
     client.pick({

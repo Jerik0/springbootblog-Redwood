@@ -513,3 +513,7 @@ div > a:hover {
   flex-direction: row;
   margin: 5px auto;
 }
+
+#temp-display {
+  z-index: 10;
+}

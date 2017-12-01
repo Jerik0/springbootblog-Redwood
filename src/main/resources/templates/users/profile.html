@@ -11,6 +11,7 @@
     <div id="links">
       <img class="user-image-display" th:src="${user.imagePath}" th:if="${user.imagePath}"/>
       <img class="user-image-display" th:src="@{images/student.svg}" th:if="!${user.imagePath}"/>
+      <img id="temp-display" class="user-image-display" src=""/>
     </div>
     <div id="upload-button-container">
       <button class="image-upload-button" id="upload-button">UPLOAD</button>
@@ -26,6 +27,5 @@
   </div>
 
 </body>
-<footer th:replace="fragments/footer :: footer"></footer>
 <script th:replace="fragments/script :: script"></script>
 </html>

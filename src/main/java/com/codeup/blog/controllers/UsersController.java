@@ -52,7 +52,7 @@ public class UsersController {
 
   @PostMapping("/upload")
   public String uploadImage(@RequestParam("imageUrl") String imageUrl, Model model) {
-    User user = usersSvc.getLoggedInUser();
+    User user = usersDao.findOne(usersSvc.getLoggedInUserId());
     user.setImagePath(imageUrl);
     usersDao.save(user);
     model.addAttribute("imageUrl");
