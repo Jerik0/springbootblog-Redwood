@@ -23,6 +23,9 @@ public class User {
   @Column()
   private String imagePath;
 
+  @Column()
+  private String bio;
+
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
   private List<Post> posts;
 
