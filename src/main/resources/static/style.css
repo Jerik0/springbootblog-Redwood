@@ -293,7 +293,6 @@ div > a:hover {
 #post-content {
   position: relative;
   border: 2px solid #1d2123;
-  padding: 5px;
   background-color: rgba(255,255,255,0.6);
   margin: 10px;
 }
@@ -301,6 +300,7 @@ div > a:hover {
 #post-body {
   font-size: .8em;
   margin-top: 0;
+  padding: 5px;
 }
 
 .post-title-timestamp {
@@ -368,19 +368,23 @@ div > a:hover {
 
 .comment {
   background-color: #ffffff;
-  padding: 5px;
   margin: 5px;
+  border: 1px solid #0ca2a4;
 }
 
 .comment-body {
   font-size: .9em;
   margin-top: 0;
+  padding: 5px;
 }
 
 .comment-bottom-container {
+  margin: 0;
   position: relative;
   display: flex;
   flex-direction: row;
+  background-color: #1d2123;
+  color: #eaffff;
 }
 
 .comment-delete-btn {
@@ -403,7 +407,6 @@ div > a:hover {
 .comment-info {
   font-weight: 100;
   padding: 3px;
-  color: #1d2123;
   font-size: .6em;
 }
 
