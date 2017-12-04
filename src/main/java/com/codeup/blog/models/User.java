@@ -26,6 +26,9 @@ public class User {
   @Column()
   private String bio;
 
+  @Column()
+  private String karma;
+
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
   private List<Post> posts;
 

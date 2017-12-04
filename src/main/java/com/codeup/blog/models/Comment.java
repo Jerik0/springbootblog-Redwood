@@ -24,6 +24,9 @@ public class Comment {
   @JoinColumn(name = "post_id")
   private Post post;
 
+  @Column()
+  private long votes;
+
   public Comment() {
 
   }
@@ -73,5 +76,13 @@ public class Comment {
 
   public void setTimestamp(String timestamp) {
     this.timestamp = timestamp;
+  }
+
+  public long getVotes() {
+    return votes;
+  }
+
+  public void setVotes(long votes) {
+    this.votes = votes;
   }
 }

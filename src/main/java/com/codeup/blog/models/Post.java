@@ -27,6 +27,9 @@ public class Post {
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "post")
   private List<Comment> comments;
 
+  @Column()
+  private long votes;
+
   public Post() {
 
   }
@@ -90,5 +93,13 @@ public class Post {
 
   public void setTimestamp(String timestamp) {
     this.timestamp = timestamp;
+  }
+
+  public long getVotes() {
+    return votes;
+  }
+
+  public void setVotes(long votes) {
+    this.votes = votes;
   }
 }
