@@ -27,7 +27,7 @@ public class User {
   private String bio;
 
   @Column()
-  private long karma;
+  private Long karma;
 
   @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
   private List<Post> posts;
@@ -46,6 +46,8 @@ public class User {
     password = copy.password;
     posts = copy.posts;
     comments = copy.comments;
+    karma = copy.karma;
+    bio = copy.bio;
   }
 
   public String getEmail() {
@@ -104,4 +106,11 @@ public class User {
     this.imagePath = imagePath;
   }
 
+  public Long getKarma() {
+    return karma;
+  }
+
+  public void setKarma(Long karma) {
+    this.karma = karma;
+  }
 }

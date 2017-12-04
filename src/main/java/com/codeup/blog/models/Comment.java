@@ -25,7 +25,7 @@ public class Comment {
   private Post post;
 
   @Column()
-  private long votes;
+  private Long votes;
 
   public Comment() {
 

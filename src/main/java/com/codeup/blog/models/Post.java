@@ -28,7 +28,7 @@ public class Post {
   private List<Comment> comments;
 
   @Column()
-  private long votes;
+  private Long votes;
 
   public Post() {
 
