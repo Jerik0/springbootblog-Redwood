@@ -67,6 +67,7 @@
       maxFiles: 3,
       // transformations: { crop: true },
     }).then(
+        //TODO This function needs to display the image that the user has chosen immediately, instead of just setting the input's val to the url.
         function(result) {
           const fileUrl = result.filesUploaded[0].url;
           imageUrlInput.val(fileUrl);

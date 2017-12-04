@@ -14,7 +14,7 @@ public interface CommentsRepository extends CrudRepository<Comment, Long>{
 
   @Query(
         nativeQuery = true,
-        value = "SELECT * FROM comment c WHERE c.post_id = ?1 ORDER BY c.id ASC"
+        value = "SELECT * FROM comment c WHERE c.post_id = ?1 ORDER BY c.id DESC"
   )
   List<Comment> sortAllByTime(long id);
 
