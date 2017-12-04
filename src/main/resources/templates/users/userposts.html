@@ -5,7 +5,7 @@
 <body>
   <div th:replace="fragments/topbar :: top-bar"></div>
   <div th:replace="fragments/navbar :: nav-bar"></div>
-  <div th:replace="fragments/titlediv :: titlediv('Posts by ' + ${user.username})"></div>
+  <div th:replace="fragments/titlediv :: titlediv(${user.username})"></div>
 
   <div class="content-container">
     <div class="post-tile" th:each="post : ${user.posts}">

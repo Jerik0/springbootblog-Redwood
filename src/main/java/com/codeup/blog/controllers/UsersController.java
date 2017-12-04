@@ -47,7 +47,7 @@ public class UsersController {
   public String showUserPosts(@PathVariable Integer id, Model model) {
     User user = usersDao.findOne((long) id);
     model.addAttribute("user", user);
-    return "/posts/userposts";
+    return "/users/userposts";
   }
 
   @PostMapping("/upload")

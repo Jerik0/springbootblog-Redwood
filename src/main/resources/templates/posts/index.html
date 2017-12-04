@@ -7,13 +7,16 @@
   <div th:replace="fragments/navbar :: nav-bar"></div>
   <div th:replace="fragments/titlediv :: titlediv('Forum Posts')"></div>
 
-  <div class="content-container">
-    <div th:each="post : ${posts}" class="post-tile">
+  <div class="wrapper">
+    <div class="content-container">
+      <div th:each="post : ${posts}" class="post-tile">
         <a class="post-owner" th:href="${'/user/' + post.owner.id + '/view'}" th:text="${post.owner.username}"></a>
         <a class="post-title" th:href="${'/posts/' + post.id}" th:text="${post.title}"></a>
-      <span class="post-title-timestamp" th:text="${post.timestamp}"></span>
+        <span class="post-title-timestamp" th:text="${post.timestamp}"></span>
+      </div>
     </div>
   </div>
+
 </body>
 <script th:replace="fragments/script :: script"></script>
 </html>
