@@ -5,7 +5,11 @@
 <body>
   <div th:replace="fragments/topbar:: top-bar"></div>
   <div th:replace="fragments/navbar :: nav-bar"></div>
-  <div th:replace="fragments/titlediv :: titlediv('Welcome To CoffeeBomb!')"></div>
+  <div id="landing-page-container">
+    <div id="landing-page-contents">
+      <span>WELCOME TO STICKYBOMB FORUM</span>
+    </div>
+  </div>
 </body>
 <script th:replace="fragments/script :: script"></script>
 </html>

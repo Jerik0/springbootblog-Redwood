@@ -27,6 +27,22 @@ body {
   outline: none;
 }
 
+#landing-page-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#landing-page-contents {
+  background-color: rgba(234, 255, 255, 0.5);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  /*height: 100%;*/
+  /*width: 100%;*/
+}
+
 /*===============FONT CLASSES==============*/
 .roboto {
   font-family: 'Roboto', sans-serif;
@@ -64,7 +80,7 @@ body {
 
 #bomb-word {
   color: #E7FFC1;
-  left: 140px;
+  left: 135px;
 }
 
 /*===========ABOVE AND BELOW PAGE===========*/
@@ -287,7 +303,7 @@ div > a:hover {
 }
 
 .post-title:hover {
-  text-shadow: 2px 2px 1px #065051;
+  text-shadow: 2px 2px 1px #ff5166;
   color: rgb(231,255,193);
 }
 
@@ -321,8 +337,8 @@ div > a:hover {
 }
 
 .post-owner:hover {
-  color: #ff5166;
-  text-shadow: 2px 2px 1px #065051;
+  color: #75edd1;
+  text-shadow: 2px 2px 1px #ff5166;
 }
 
 #number-request-container {
@@ -526,3 +542,4 @@ div > a:hover {
 #temp-display {
   z-index: 10;
 }
+
