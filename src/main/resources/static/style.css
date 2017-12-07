@@ -178,7 +178,6 @@ body {
 }
 
 .title-div {
-  /*background: url('/images/arches.png');*/
   background-color: #1d2123;
 }
 
@@ -195,7 +194,6 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   color: rgb(231,255,193);
-  /*margin-left: 25px;*/
   text-shadow: 2px 2px 2px #000;
   padding: 5px;
 }
@@ -207,9 +205,9 @@ body {
 }
 
 .content-container {
-  margin: 10px;
+  margin: 10px auto;
   overflow: auto;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   width: 50%;
 }
 
