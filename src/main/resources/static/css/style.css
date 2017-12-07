@@ -6,15 +6,14 @@ html, body {
 }
 
 @font-face {
-  src: url('images/slim-joe.otf');
+  src: url('../images/Slim-Joe.otf');
   font-family: 'Slim-Joe';
 }
 
 html {
   position: relative;
   min-height: 100%;
-  background: url(/images/congruent_pentagon.png);
-  background-attachment: fixed;
+  background: url(../images/congruent_pentagon.png) fixed;
 }
 
 body {
@@ -91,7 +90,7 @@ body {
   max-width: 100%;
   align-items: center;
   position: relative;
-  background: url('images/diagmonds.png');
+  background: url('../images/diagmonds.png');
   background-color: rgba(231, 255, 193, 0.8);
   margin: 0;
   display: flex;
@@ -127,7 +126,7 @@ body {
 #nav-items-container {
   font-family: 'Slim-Joe', 'sans-serif';
   position: relative;
-  background: url('/images/escheresque_ste.png');
+  background: url('../images/escheresque_ste.png');
   margin: 0;
   list-style-type: none;
   display: flex;
@@ -263,7 +262,7 @@ div > a:hover {
 #post-owner-name {
   display: inline;
   margin-top: 0;
-  background: url('images/escheresque_ste.png');
+  background: url('../images/escheresque_ste.png');
   box-shadow: 0 3px 1px #231c18;
 }
 
@@ -354,7 +353,7 @@ div > a:hover {
 
 /*================COMMENTS==================*/
 #comments-container {
-  background: url('images/diagmonds.png');
+  background: url('../images/diagmonds.png');
   margin: 10px;
   margin-top: 0;
 }
@@ -473,7 +472,7 @@ div > a:hover {
 }
 
 .user-submit-btn {
-  background: url('images/diagmonds.png');
+  background: url('../images/diagmonds.png');
   color: #ffffff;
   font-size: 1em;
 }
