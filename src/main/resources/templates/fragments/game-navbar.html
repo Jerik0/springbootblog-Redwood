@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="game-navbar" id="nav-container">
+  <ul id="nav-item-container">
+    <li class="nav-item">
+      <a th:href="${'/gamecenter/tetris'}">Tetris</a>
+    </li>
+    <li class="nav-item">
+      <a th:href="${'/gamecenter/bejeweled'}">Bejeweled</a>
+    </li>
+    <li class="nav-item">
+      <a th:href="${'/gamecenter/connectfour'}">Connect Four</a>
+    </li>
+  </ul>
+</div>
+</html>
