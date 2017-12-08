@@ -3,6 +3,12 @@
 <head th:replace="fragments/gamecenterhead :: gamehead('Game Center')">
 </head>
 <body>
-<div th:replace="fragments/game-navbar :: game-navbar"></div>
+
+  <div class="gameboy-container">
+    <!--<div th:replace="fragments/game-navbar :: game-navbar"></div>-->
+    <div th:replace="fragments/game-area :: game-area"></div>
+  </div>
+
+
 </body>
 </html>
