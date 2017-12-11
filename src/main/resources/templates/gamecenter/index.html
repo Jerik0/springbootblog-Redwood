@@ -6,7 +6,57 @@
 
   <div class="gameboy-container">
     <!--<div th:replace="fragments/game-navbar :: game-navbar"></div>-->
-    <div th:replace="fragments/game-area :: game-area"></div>
+    <div id="gameboy">
+
+      <div id="screen-container">
+        <div id="above-screen-container">
+          <div id="red-blue-container1">
+            <div class="red line"></div>
+            <div class="blue line"></div>
+          </div>
+          <span id="above-screen-text">Dot Matrix With Stereo Sound</span>
+          <div id="red-blue-container2">
+            <div class="red line"></div>
+            <div class="blue line"></div>
+          </div>
+        </div>
+        <div id="screen"></div>
+      </div>
+      <span id="brand-name">Pretendo GAMEPLOY</span>
+
+      <div id="buttons-container">
+        <div id="d-pad"></div>
+        <div id="a-b-button-container">
+          <div id="b-button" class="gameboy-button">
+            <span class="gameboy-btn-txt">B</span>
+          </div>
+          <div id="a-button" class="gameboy-button">
+            <span class="gameboy-btn-txt">A</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="options-speaker-container">
+        <div id="select-start-container">
+          <div id="select" class="option-button">
+            <span id="select-text" class="button-text">Select</span>
+          </div>
+          <div id="start" class="option-button">
+            <span id="start-text" class="button-text">Start</span>
+          </div>
+        </div>
+
+        <div id="speaker-container">
+          <div class="speaker-slit"></div>
+          <div class="speaker-slit"></div>
+          <div class="speaker-slit"></div>
+          <div class="speaker-slit"></div>
+          <div class="speaker-slit"></div>
+          <div class="speaker-slit"></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 
 
