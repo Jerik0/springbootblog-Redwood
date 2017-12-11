@@ -90,6 +90,7 @@ a:hover {
   width: 210px;
   border: 1px solid black;
   background-color: #534b45;
+  box-shadow: inset 0 0 10px #000000;
 }
 
 #buttons-container {
