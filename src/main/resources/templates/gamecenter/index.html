@@ -20,7 +20,10 @@
             <div class="blue line"></div>
           </div>
         </div>
-        <div id="screen"></div>
+        <div id="screen-wrapper">
+          <canvas id="screen" width="200" height="200"></canvas>
+        </div>
+
       </div>
       <span id="brand-name">Pretendo GAMEPLOY</span>
 
@@ -59,6 +62,6 @@
     </div>
   </div>
 
-
 </body>
+<script th:replace="fragments/script :: gamescripts"></script>
 </html>

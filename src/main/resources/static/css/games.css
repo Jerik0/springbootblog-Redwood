@@ -85,10 +85,13 @@ a:hover {
   margin: 38px auto 0 auto;
 }
 
+#screen-wrapper {
+  position: relative;
+}
+
 #screen {
-  margin: 0 auto;
-  height: 210px;
-  width: 210px;
+  position: absolute;
+  left: 46px;
   border: 1px solid black;
   background-color: #534b45;
   box-shadow: inset 0 0 10px #000000;
