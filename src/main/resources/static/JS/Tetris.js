@@ -1,6 +1,6 @@
 "use strict";
 
-// (() => {
+(() => {
 
   const screen = document.getElementById('screen');
   const context = screen.getContext('2d');
@@ -79,6 +79,64 @@
     });
   }
 
+  function playerDrop() {
+    player.pos.y++;
+    if(collide(arena, player)) { //If player collides with another piece,
+      player.pos.y--; //Stay where it is
+      merge(arena, player); //Add its position to the arena (empty space)
+      player.pos.y = 0; //Start from the top again with another piece.
+    }
+    dropCounter = 0;
+  }
+
+  //Detects if the player is colliding with the walls of the screen and will prevent further movement, otherwise move that direction.
+  function playerMove(dir) {
+    player.pos.x += dir;
+    if(collide(arena, player)) {
+      player.pos.x -= dir;
+    }
+  }
+
+  function playerRotate(dir) {
+    const pos = player.pos.x;
+    let offset = 1;
+
+    rotate(player.matrix, dir);
+
+    while(collide(arena, player)) { //Check for collision with walls
+      player.pos.x += offset; //If next to a wall, set the player's x position + or - depending on the wall it hits
+      offset = -(offset + (offset > 0 ? 1 : -1));
+      if(offset > player.matrix[0].length) {
+        rotate(player.matrix, -dir);
+        player.pos.x = pos;
+        return;
+      }
+    }
+  }
+
+  function rotate(matrix, dir) {
+    for(let y = 0; y < matrix.length; ++y) { //Iterate over entire player shape
+      for(let x = 0; x < y; ++x) {
+        //Transpose the shape from rows to columns.
+        [
+            matrix[x][y],
+            matrix[y][x],
+        ] = [
+            matrix[y][x],
+            matrix[x][y],
+        ];
+
+        //Reverse the columns.
+        if(dir > 0) {
+          matrix.forEach((row => row.reverse()));
+        } else {
+          matrix.reverse();
+        }
+
+      }
+    }
+  }
+
   //Interval variables
   let dropCounter = 0;
   let dropInterval = 1000;
@@ -91,10 +149,9 @@
 
     dropCounter += deltaTime;
 
-    //Once the dropCounter reaches 1000, moves the player's Y position down by one, and repeats.
+    //Once the dropCounter reaches 1000, calls playerDrop().
     if(dropCounter > dropInterval) {
-      player.pos.y++;
-      dropCounter = 0;
+      playerDrop();
     }
 
     draw();
@@ -106,33 +163,32 @@
     matrix: matrix
   };
 
-  function playerDrop() {
-    player.pos.y++;
-    if(collide(arena, player)) { //If player collides with another piece,
-      player.pos.y--; //Stay where it is
-      merge(arena, player); //Add its position to the arena (empty space)
-      player.pos.y = 0; //Start from the top again with another piece.
-    }
-    dropCounter = 0;
-  }
-
+  //Switch for detecting player movement.
   document.addEventListener('keydown', event => {
     switch(event.keyCode) {
       case 39:
         event.preventDefault();
         console.log("right");
-        player.pos.x++;
+        playerMove(1);
         break;
       case 37:
         event.preventDefault();
         console.log("left");
-        player.pos.x--;
+        playerMove(-1);
         break;
       case 40:
         event.preventDefault();
         console.log("drop");
         playerDrop();
          break;
+      case 81:
+        event.preventDefault();
+        playerRotate(-1);
+        break;
+      case 87:
+        event.preventDefault();
+        playerRotate(1);
+        break;
       default:
         console.log("Default works");
     }
@@ -140,4 +196,4 @@
 
   update();
 
-// })();
+})();
