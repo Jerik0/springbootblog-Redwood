@@ -99,13 +99,13 @@
   function createMatrix(w, h) {
     const matrix = [];
     while (h--) { //While h is not 0, decrement h.
-      matrix.push(new Array(w).fill(0)); //Add an array on each index of h, creating essentially a matrix.
+      matrix.push(new Array(w).fill(0)); //Add an array on each index of h, creating a matrix.
     }
     return matrix;
   }
 
   function draw() {
-    context.fillStyle = '#99d1d4';
+    context.fillStyle = '#69615b';
     context.fillRect(0, 0, screen.width, screen.height);
 
     drawMatrix(arena, {x: 0, y: 0});
@@ -182,6 +182,7 @@
     }
   }
 
+  //TODO Change how rotation works: use arrays of pre-defined shapes instead of this algorithm.
   function rotate(matrix, dir) {
     for(let y = 0; y < matrix.length; ++y) { //Iterate over entire player shape
       for(let x = 0; x < y; ++x) {
@@ -231,10 +232,10 @@
       '#ff2e47',
       '#9fffb4',
       '#1e51e2',
-      '#e2cc03',
-      '#d1500e',
-      '#b823a0',
-      '#38a79c'
+      '#edff0b',
+      '#ff8ab7',
+      '#effff8',
+      '#53ffef'
   ];
 
   const arena = createMatrix(20, 20);
