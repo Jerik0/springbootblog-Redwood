@@ -6,4 +6,4 @@ This will be a set of a few games. As of right now, the playable one is Tetris. 
 
 # To play Tetris
 W and Q rotate the blocks. 
-Space bar accelerates the piece towards the bottom.
+Down arrow accelerates the piece towards the bottom, while the left and right arrows move it according to the corresponding direction.
