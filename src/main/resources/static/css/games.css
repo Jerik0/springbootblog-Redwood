@@ -4,6 +4,7 @@ html, body {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   height: 100%;
+  color: #fff;
 }
 
 html {
@@ -274,4 +275,9 @@ a:hover {
   margin-left: 36px;
   margin-top: 5px;
   color: #1a1a97
+}
+
+#score {
+  color: #fff;
+  font-size: 1.5em;
 }

@@ -4,6 +4,27 @@
 
   const screen = document.getElementById('screen');
   const context = screen.getContext('2d');
+  const colors = [
+    null,
+    '#ff2e47',
+    '#9fffb4',
+    '#1e51e2',
+    '#edff0b',
+    '#ff8ab7',
+    '#effff8',
+    '#53ffef'
+  ];
+  const arena = createMatrix(20, 20);
+  const player = {
+    pos: {x: 5, y: 0},
+    matrix: null,
+    score: 0
+  };
+
+  //Interval variables
+  let dropCounter = 0;
+  let dropInterval = 1000;
+  let lastTime = 0;
 
   context.scale(10, 10);
 
@@ -14,20 +35,25 @@
 
   };
 
+  //Constantly checks for completed lines of positive numbers, removes them and unshifts empty line of 0's to the end.
   function arenaSweep() {
+    let rowCount = 1;
     outer: for(let y = arena.length - 1; y > 0; --y) {
       for(let x = 0; x < arena[y].length; ++x) {
-        if(arena[y][x] === 0) {
+        if(arena[y][x] === 0) { //Checks if the row has a 0 in it. If not, continue checking.
           continue outer;
         }
-      }
-
+    }
       const row = arena.splice(y, 1)[0].fill(0);
       arena.unshift(row);
       ++y;
+
+      player.score += rowCount * 10;
+      rowCount *= 2;
     }
   }
 
+  //Collision detection with other shapes and outer walls.
   function collide(arena, player) {
     const [m, o] = [player.matrix, player.pos]; //Create an array using the player's shape and position
 
@@ -139,6 +165,7 @@
     });
   }
 
+  //Drops randomly generated piece at interval. Includes collision detection.
   function playerDrop() {
     player.pos.y++;
     if(collide(arena, player)) { //If player collides with another piece,
@@ -146,6 +173,7 @@
       merge(arena, player); //Add its position to the arena (empty space)
       playerReset(); //Start from the top again with another piece.
       arenaSweep();
+      updateScore();
     }
     dropCounter = 0;
   }
@@ -163,6 +191,12 @@
     player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
     player.pos.y = 0;
     player.pos.x = (arena[0].length / 2 | 0) - (player.matrix.length / 2 | 0);
+
+    if(collide(arena, player)) {
+      arena.forEach(row => row.fill(0));
+      player.score = 0;
+      updateScore();
+    }
   }
 
   function playerRotate(dir) {
@@ -206,11 +240,6 @@
     }
   }
 
-  //Interval variables
-  let dropCounter = 0;
-  let dropInterval = 1000;
-  let lastTime = 0;
-
   //Updates the screen recursively to show the new position of the generated shape.
   function update(time = 0) {
     let deltaTime = time - lastTime;
@@ -219,7 +248,7 @@
     dropCounter += deltaTime;
 
     //Once the dropCounter reaches 1000, calls playerDrop().
-    if(dropCounter > dropInterval) {
+    if (dropCounter > dropInterval) {
       playerDrop();
     }
 
@@ -227,23 +256,9 @@
     requestAnimationFrame(update);
   }
 
-  const colors = [
-      null,
-      '#ff2e47',
-      '#9fffb4',
-      '#1e51e2',
-      '#edff0b',
-      '#ff8ab7',
-      '#effff8',
-      '#53ffef'
-  ];
-
-  const arena = createMatrix(20, 20);
-
-  const player = {
-    pos: {x: 5, y: 0},
-    matrix: createPiece('T')
-  };
+  function updateScore() {
+    document.getElementById('score').innerText = ("Score: " + player.score);
+  }
 
   //Switch for detecting player movement.
   document.addEventListener('keydown', event => {
@@ -276,6 +291,7 @@
     }
   });
 
+  playerReset();
   update();
 
 })();
