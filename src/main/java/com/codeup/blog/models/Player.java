@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table
 public class Player {
 
-  @Column
+  @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 

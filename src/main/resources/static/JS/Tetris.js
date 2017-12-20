@@ -6,11 +6,11 @@
   const context = screen.getContext('2d');
   const colors = [
     null,
-    '#052140',
-    '#FFC1A6',
+    '#ff008d',
+    '#38a79c',
     '#ED4902',
     '#DEFFFC',
-    '#7D8A87',
+    '#000000',
     '#ff3a3a',
     '#79ffc4'
   ];
