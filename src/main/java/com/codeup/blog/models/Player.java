@@ -7,12 +7,13 @@ import javax.persistence.*;
 public class Player {
 
   @Column
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   @Column
   private long highScore;
 
-  @Column
+  @Column(nullable = false, length = 40)
   private String playername;
 
   public Player() {
