@@ -6,17 +6,17 @@
   const context = screen.getContext('2d');
   const colors = [
     null,
-    '#ff2e47',
-    '#9fffb4',
-    '#1e51e2',
-    '#edff0b',
-    '#ff8ab7',
-    '#effff8',
-    '#53ffef'
+    '#052140',
+    '#FFC1A6',
+    '#ED4902',
+    '#DEFFFC',
+    '#7D8A87',
+    '#ff3a3a',
+    '#79ffc4'
   ];
   const arena = createMatrix(20, 20);
   const player = {
-    pos: {x: 5, y: 0},
+    pos: {x: 0, y: 0},
     matrix: null,
     score: 0
   };
@@ -27,8 +27,6 @@
   let lastTime = 0;
 
   context.scale(10, 10);
-
-  //TODO Create shape objects (?)
 
   //TODO Create animation for powering on
   const powerOn = () => {
