@@ -203,7 +203,8 @@
 
     rotate(player.matrix, dir);
 
-    while(collide(arena, player)) { //Check for collision with walls
+    //Check for collision with walls
+    while(collide(arena, player)) {
       player.pos.x += offset; //If next to a wall, set the player's x position + or - depending on the wall it hits
       offset = -(offset + (offset > 0 ? 1 : -1));
       if(offset > player.matrix[0].length) {
@@ -235,6 +236,145 @@
         }
 
       }
+    }
+  }
+
+  let iPiece = [
+    [
+      [0,1,0,0],
+      [0,1,0,0],
+      [0,1,0,0],
+      [0,1,0,0]
+    ],
+    [
+      [1,1,1,1]
+    ]
+  ];
+
+  let jPiece = [
+      [
+        [0,1],
+        [0,1],
+        [1,1]
+      ],
+      [
+        [1,0,0],
+        [1,1,1]
+      ],
+      [
+        [1,1],
+        [1,0],
+        [1,0]
+      ],
+      [
+        [1,1,1],
+        [0,0,1]
+      ]
+  ];
+
+  let lPiece = [
+      [
+          [1,0],
+          [1,0],
+          [1,1]
+      ],
+      [
+          [1,1,1],
+          [1,0,0],
+      ],
+      [
+          [0,1,1],
+          [0,0,1],
+          [0,0,1]
+      ],
+      [
+          [0,0,1],
+          [1,1,1]
+      ]
+  ];
+
+  let tPiece = [
+      [
+          [1,1,1],
+          [0,1,0]
+      ],
+      [
+          [0,1],
+          [1,1],
+          [0,1]
+      ],
+      [
+          [0,1,0],
+          [1,1,1]
+      ],
+      [
+          [1,0],
+          [1,1],
+          [1,0]
+      ]
+  ];
+
+  let sPiece = [
+      [
+          [0,1,1],
+          [1,1,0],
+      ],
+      [
+          [1,0],
+          [1,1],
+          [0,1]
+      ]
+  ];
+
+  let zPiece = [
+      [
+          [1,1,0],
+          [0,1,1]
+      ],
+      [
+          [0,1],
+          [1,1],
+          [1,0]
+      ]
+  ];
+
+  function rotatePiece(matrix, dir) {
+    let index = 0;
+    switch(matrix) {
+      case "I": {
+        if(dir > 0) {
+          index++;
+          player.matrix = iPiece[index];
+        } else {
+          index--;
+          player.matrix = iPiece[index];
+        }
+      }
+      break;
+      case "T": {
+
+      }
+      break;
+      case "S": {
+
+      }
+      break;
+      case "Z": {
+
+      }
+      break;
+      case "O": {
+
+      }
+      break;
+      case "L": {
+
+      }
+      break;
+      case "J": {
+
+      }
+      break;
     }
   }
 
