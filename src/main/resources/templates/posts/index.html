@@ -9,10 +9,14 @@
 
   <div class="wrapper">
     <div class="content-container">
-      <div th:each="post : ${posts}" class="post-tile">
-        <a class="post-owner" th:href="${'/user/' + post.owner.id + '/view'}" th:text="${post.owner.username}"></a>
-        <a class="post-title" th:href="${'/posts/' + post.id}" th:text="${post.title}"></a>
-        <span class="post-title-timestamp" th:text="${post.timestamp}"></span>
+      <div th:each="post : ${posts}" class="post-wrapper">
+        <div class="post-tile">
+          <a class="post-owner" th:href="${'/user/' + post.owner.id + '/view'}" th:text="${post.owner.username}">
+          </a>
+          <a class="post-title" th:href="${'/posts/' + post.id}" th:text="${post.title}"></a>
+          <span class="post-title-timestamp" th:text="${post.timestamp}"></span>
+        </div>
+        <div class="post-body" th:text="${post.body}"></div>
       </div>
     </div>
   </div>
