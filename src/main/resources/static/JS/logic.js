@@ -24,24 +24,30 @@
     }
   });
 
+  //Cut off extra characters on timestamps
   postTitleTimestamp.each(function() {
-    let replaceString = this.innerHTML.substring(8);
+    let replaceString;
+    if(this.innerHTML.substring(1,2) === "/") {
+      replaceString = this.innerHTML.substring(7);
+    } else {
+      replaceString = this.innerHTML.substring(8);
+    }
     this.innerText = this.innerText.replace(replaceString, "");
   });
 
   //When topbar is no longer on screen, fix navbar to top of screen.
-  $(window).scroll(function() {
-    if(topBar.offset().top - $(window).scrollTop() <= -83) {
-      navBar.addClass('sticky');
-      $('#logout-btn').css("position", "relative");
-      topBarItems.appendTo(userLinksContainer);
-    }
-
-    if(topBar.offset().top - $(window).scrollTop() > -83) {
-      topBarItems.appendTo(userLinks);
-      navBar.removeClass('sticky');
-    }
-  });
+  // $(window).scroll(function() {
+  //   if(topBar.offset().top - $(window).scrollTop() <= -83) {
+  //     navBar.addClass('sticky');
+  //     $('#logout-btn').css("position", "relative");
+  //     topBarItems.appendTo(userLinksContainer);
+  //   }
+  //
+  //   if(topBar.offset().top - $(window).scrollTop() > -83) {
+  //     topBarItems.appendTo(userLinks);
+  //     navBar.removeClass('sticky');
+  //   }
+  // });
 
   console.log(userStatus);
   // If theres not a user (thus no comment-submit form), change submit form bg to none.

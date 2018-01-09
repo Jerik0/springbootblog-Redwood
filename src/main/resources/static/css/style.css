@@ -2,9 +2,8 @@
 @media only screen and (min-device-width : 320px) {
   /*=================GENERAL=================*/
   html, body {
-    width: 100vw;
     box-sizing: border-box;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-family: 'Roboto', sans-serif;
   }
 
@@ -85,19 +84,16 @@
 
   /*===========ABOVE AND BELOW PAGE===========*/
   #topbar-container {
-    font-family: 'Slim-Joe', 'sans-serif';
     font-size: .7em;
     font-weight: 600;
     max-width: 100%;
     align-items: center;
     position: relative;
-    background: url('../images/diagmonds.png');
-    background-color: rgba(231, 255, 193, 0.8);
+    background-color: #64cfb7;
     margin: 0;
     display: flex;
     flex-direction: row;
     padding: 0;
-    /*border-bottom: 1px solid #E7FFC1;*/
   }
 
   #topbar-list-left, #topbar-list-right {
@@ -125,7 +121,7 @@
   #nav-items-container {
     font-family: 'Slim-Joe', 'sans-serif';
     position: relative;
-    background: url('../images/escheresque_ste.png');
+    background-color: #f3f3e9;
     margin: 0;
     list-style-type: none;
     display: flex;
@@ -224,15 +220,16 @@
   li > a {
     box-sizing: border-box;
     font-size: 1em;
+    /*font-weight: bolder;*/
   }
 
   li > a:link {
-    color: #0ca2a4;
+    color: #ff5166;
     text-decoration: none;
   }
 
   li > a:visited {
-    color: #0ca2a4;
+    color: #ff5166;
     text-decoration: none;
   }
 
@@ -266,8 +263,24 @@
     color: #ff5166;
   }
 
+  a.post-title:link {
+    color: #1d2123;
+  }
+
   a.post-title:visited {
     color: #1d2123;
+  }
+
+  .post-body > a:link {
+    color: #1d2123;
+  }
+
+  .post-body > a:visited {
+    color: #1d2123;
+  }
+
+  .post-body > a:hover {
+    color: #0ca2a4;
   }
 
   /*=================POSTS===================*/
@@ -294,21 +307,22 @@
     max-width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 6px 4px 6px 4px;
+    border: 1px solid #9badb4;
+    box-shadow: 0 2px #262729;
   }
 
   .post-tile {
+    background-color: #f3f3e9;
     position: relative;
     box-sizing: border-box;
     margin: 4px 0;
-    border-top: 1px solid #0ca2a4;
-    border-bottom: 1px solid #0ca2a4;
     font-weight: lighter;
     color: #0ca2a4;
     text-align: center;
     padding: 5px;
     display: flex;
     flex-direction: row;
-    font-size: 2em;
   }
 
   .post-tile-title {
@@ -344,16 +358,42 @@
   }
 
   #post-body {
-    font-size: .8em;
+    font-size: 1em;
     margin-top: 0;
     padding: 5px;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    background-color: white;
+  }
+
+  .post-body-wrapper {
+    position: relative;
   }
 
   .post-body {
+    height: 50px;
+    padding: 5px;
+    overflow: hidden;
     overflow-wrap: break-word;
     max-width: 100%;
-    font-size: 1.5em;
     background-color: white;
+  }
+
+  .gradient {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 56px;
+    width: 100%;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgb(255, 255, 255) 90%);
+  }
+
+  .post-body > a {
+    overflow: hidden;
+    z-index: 1;
+    height: 50px;
+    display: block;
   }
 
   .owner-container {
@@ -422,7 +462,7 @@
   }
 
   .comment-body {
-    font-size: .9em;
+    font-size: .8em;
     margin-top: 0;
     padding: 5px;
   }
@@ -456,7 +496,7 @@
   .comment-info {
     font-weight: 100;
     padding: 3px;
-    font-size: .6em;
+    /*font-size: em;*/
   }
 
   /*================FORMS STUFF===============*/
@@ -572,3 +612,8 @@
   }
 }
 
+@media only screen and (min-device-width : 768px) {
+  html, body {
+    font-size: 1em;
+  }
+}

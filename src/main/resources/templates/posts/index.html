@@ -16,7 +16,14 @@
           <a class="post-title" th:href="${'/posts/' + post.id}" th:text="${post.title}"></a>
           <span class="post-title-timestamp" th:text="${post.timestamp}"></span>
         </div>
-        <div class="post-body" th:text="${post.body}"></div>
+        <div class="post-body-wrapper">
+          <div class="post-body">
+            <a th:href="${'/posts/' + post.id}" th:text="${post.body}"></a>
+          </div>
+          <a th:href="${'/posts/' + post.id}">
+            <div class="gradient"></div>
+          </a>
+        </div>
       </div>
     </div>
   </div>
