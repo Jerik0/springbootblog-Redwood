@@ -18,6 +18,34 @@
     flex-direction: column;
   }
 
+  #landing-page-container {
+    background-color: #1d2123;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #landing-page-contents {
+    background-color: rgba(234, 255, 255, 0.5);
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  /*tippy-toppest nav ul*/
+  #site-nav {
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+  }
+
+  /*tippy-toppest nav li*/
+  .site-nav {
+    margin: 5px;
+  }
+
   /*==========NAV BAR==========*/
   #nav-container {
     margin: 0;
