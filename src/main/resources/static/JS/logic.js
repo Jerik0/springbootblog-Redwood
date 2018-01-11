@@ -24,7 +24,7 @@
     }
   });
 
-  //This giant block of code is for the hamburger menu
+  //This giant block of code is for the hamburger menu. These classes use animations.
   $('#forum-hamburger').click(function() {
     if($(this).hasClass('rotate')) {
       $(this).removeClass('rotate');
@@ -32,19 +32,19 @@
       $(this).removeClass('stick-right');
       userLinks.removeClass('drop-menu');
       userLinks.addClass('retract-menu');
-      userLinks.css('top','-100px');
+      userLinks.css('top','-340px');
     } else if($(this).hasClass('unrotate')) {
       $(this).removeClass('unrotate');
       $(this).addClass('rotate');
       $(this).addClass('stick-right');
       userLinks.removeClass('retract-menu');
       userLinks.addClass('drop-menu');
-      userLinks.css('top','250px');
+      userLinks.css('top','10px');
     } else {
       $(this).addClass('rotate');
       $(this).addClass('stick-right');
       userLinks.addClass('drop-menu');
-      userLinks.css('top','250px');
+      userLinks.css('top','10px');
     }
   });
 

@@ -127,14 +127,39 @@
     list-style-type: none;
   }
 
-  #topbar-list-right {
-    background-color: rgba(243, 243, 233, 0.9);
+  #topbar-list-right-wrapper {
+    position: relative;
+    background-color: rgba(38, 39, 41, 1);
     z-index: 3;
+  }
+
+  #topbar-list-right {
+    background-color: rgba(184, 206, 214, 0.8);
+    border: 1px solid #f3f3e9;
+    border-radius: 5px;
     list-style-type: none;
-    padding: 0;
+    padding: 5px;
     position: absolute;
-    top: -100px;
+    top: -340px;
     right: 40px;
+    z-index: 3;
+  }
+
+  #topbar-list-right > li {
+    text-decoration: none;
+  }
+
+  #topbar-list-right > li > a:link {
+    color: #f3f3e9;
+  }
+
+  #topbar-list-right > li > a:visited {
+    color: #f3f3e9;
+  }
+
+  #topbar-list-right > li > a:hover {
+    color: #bef3de;
+    transform: scale(1.2);
   }
 
   .topbar-item-right {
@@ -162,36 +187,31 @@
     height: 2.6em;
   }
 
-  #nav-items-container {
-    position: relative;
-    background-color: #f3f3e9;
-    margin: 0;
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    box-shadow: 0 3px 1px #231c18;
-    z-index: 10;
-  }
+  /*#nav-items-container {*/
+    /*position: relative;*/
+    /*background-color: #f3f3e9;*/
+    /*margin: 0;*/
+    /*list-style-type: none;*/
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*padding: 0;*/
+    /*box-shadow: 0 3px 1px #231c18;*/
+    /*z-index: 10;*/
+  /*}*/
 
-  #nav-items-container > li > a:hover {
-    color: #ff5166;
-  }
+  /*#nav-items-container > li > a:hover {*/
+    /*color: #ff5166;*/
+  /*}*/
 
-  #nav-bar {
-    width: 100%;
-  }
+  /*#nav-bar {*/
+    /*width: 100%;*/
+  /*}*/
 
   .topbar-item {
     font-weight: 200;
     font-size: 1.5em;
     padding: 2px;
     margin: 3px 5px;
-  }
-
-  #logout-btn:hover {
-    border-color: #b8ced6;
-    border-radius: 0;
   }
 
   #logout-btn {
@@ -203,6 +223,12 @@
     font-size: 1em;
     border: none;
     margin-left: 0;
+  }
+
+  #logout-btn:hover {
+    cursor: hand;
+    border-color: #b8ced6;
+    border-radius: 0;
   }
 
   ul > .topbar-item:last-of-type {
@@ -269,11 +295,6 @@
   }
 
   li > a:link {
-    color: #ff5166;
-    text-decoration: none;
-  }
-
-  #topbar-list-right > li > a:visited {
     color: #ff5166;
     text-decoration: none;
   }
@@ -473,15 +494,16 @@
     margin-top: 0;
   }
 
-  #comment-submit-container {
-    background: linear-gradient(to right, rgba(201, 255, 221, 0.8), rgba(255, 255, 255, 0));
-  }
-
   #comment-submit-bg {
     border: 2px solid #1d2123;
     margin: 10px 10px 0 10px;
     background-color: rgba(29, 33, 25, 0.8);
   }
+
+  #comment-submit-container {
+    background: linear-gradient(to right, rgba(201, 255, 221, 0.8), rgba(255, 255, 255, 0));
+  }
+
 
   #comment-submit-form {
     /*width: 50%;*/
@@ -598,7 +620,6 @@
   }
 
   .sticky {
-    z-index: 10;
     position: fixed;
     top: 0;
   }
@@ -688,8 +709,8 @@
 }
 
 @keyframes retract-menu {
-  0% {top: 250px;}
-  100% {top: -95px;}
+  0% {top: 10px;}
+  100% {top: -320px;}
 }
 
 .drop-menu {
@@ -698,8 +719,8 @@
 }
 
 @keyframes drop-menu {
-  0% {top: -95px;}
-  100% {top: 250px;}
+  0% {top: -320px;}
+  100% {top: 10px;}
 }
 
 /*===========TABLET BREAK POINT===========*/
