@@ -15,12 +15,36 @@
   const imageUrlInput = $('#imageUrl');
   const userImage = $('.user-image-display');
 
-  //Check each post title. If title is longer than 18 chars, replace remaining chars with "..."
+  //Check each post title. If title is longer than 15 chars, replace remaining chars with "..."
   postTitle.each(function() {
     let thisText = this.text;
     if(this.text.length > 15) {
       let replaceString = thisText.substring(15);
       this.text = thisText.replace(replaceString, "...");
+    }
+  });
+
+  //This giant block of code is for the hamburger menu
+  $('#forum-hamburger').click(function() {
+    if($(this).hasClass('rotate')) {
+      $(this).removeClass('rotate');
+      $(this).addClass('unrotate');
+      $(this).removeClass('stick-right');
+      userLinks.removeClass('drop-menu');
+      userLinks.addClass('retract-menu');
+      userLinks.css('top','-100px');
+    } else if($(this).hasClass('unrotate')) {
+      $(this).removeClass('unrotate');
+      $(this).addClass('rotate');
+      $(this).addClass('stick-right');
+      userLinks.removeClass('retract-menu');
+      userLinks.addClass('drop-menu');
+      userLinks.css('top','250px');
+    } else {
+      $(this).addClass('rotate');
+      $(this).addClass('stick-right');
+      userLinks.addClass('drop-menu');
+      userLinks.css('top','250px');
     }
   });
 
@@ -36,7 +60,7 @@
   });
 
   console.log(userStatus);
-  // If theres not a user (thus no comment-submit form), change submit form bg to none.
+  // If no user (thus no comment-submit form), change submit form bg to none.
   if(userStatus == "false") {
     console.log('No user!');
     $('#comment-submit-bg').css('border', 'none');

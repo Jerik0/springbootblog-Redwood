@@ -10,25 +10,26 @@
         </a>
       </li>
     </ul>
-    <ul id="topbar-list-right">
-      <li class="topbar-item">
-        <a href="/posts">Posts</a>
-      </li>
-      <li sec:authorize="isAuthenticated()" class="topbar-item"><a href="/posts/create">Create Post</a></li>
-      <li class="topbar-item" sec:authorize="isAuthenticated()">
-        <a href="/profile" th:text="${#authentication.principal.username}"></a>
-      </li>
-      <li class="topbar-item" sec:authorize="!isAuthenticated()">
-        <a href="/register">Join Us!</a>
-      </li>
-      <li class="topbar-item" sec:authorize="!isAuthenticated()">
-        <a href="/login">Log In</a>
-      </li>
-      <li sec:authorize="isAuthenticated()" class="topbar-item">
-        <form th:action="@{/logout}" th:method="post" id="logout-form">
-          <button id="logout-btn" class="topbar-item">Logout</button>
-        </form>
-      </li>
-    </ul>
+    <img id="forum-hamburger" class="hamburger" th:src="@{/images/hamburger.svg}" alt=""/>
   </div>
+  <ul id="topbar-list-right">
+    <li class="topbar-item">
+      <a href="/posts">Posts</a>
+    </li>
+    <li sec:authorize="isAuthenticated()" class="topbar-item"><a href="/posts/create">Create Post</a></li>
+    <li class="topbar-item" sec:authorize="isAuthenticated()">
+      <a href="/profile" th:text="${#authentication.principal.username}"></a>
+    </li>
+    <li class="topbar-item" sec:authorize="!isAuthenticated()">
+      <a href="/register">Join Us!</a>
+    </li>
+    <li class="topbar-item" sec:authorize="!isAuthenticated()">
+      <a href="/login">Log In</a>
+    </li>
+    <li sec:authorize="isAuthenticated()" class="topbar-item">
+      <form th:action="@{/logout}" th:method="post" id="logout-form">
+        <button id="logout-btn" class="topbar-item">Logout</button>
+      </form>
+    </li>
+  </ul>
 </div>

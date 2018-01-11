@@ -29,9 +29,7 @@
   }
 
   #landing-page-container {
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
+    z-index: 999;
     background-color: #1d2123;
     min-height: 100%;
     display: flex;
@@ -119,9 +117,10 @@
     display: flex;
     flex-direction: row;
     padding: 0;
+    z-index: 4;
   }
 
-  #topbar-list-left, #topbar-list-right {
+  #topbar-list-left {
     margin: 5px 5px;
     display: flex;
     flex-direction: row;
@@ -129,8 +128,12 @@
   }
 
   #topbar-list-right {
+    background-color: rgba(243, 243, 233, 0.9);
+    z-index: 3;
+    list-style-type: none;
     padding: 0;
     position: absolute;
+    top: -100px;
     right: 40px;
   }
 
@@ -151,6 +154,12 @@
   .dropdown {
     color: #ff5166;
     background-color: #f3f3e9;
+  }
+
+  #forum-hamburger {
+    position: absolute;
+    right: 15px;
+    height: 2.6em;
   }
 
   #nav-items-container {
@@ -648,6 +657,52 @@
   }
 }
 
+/*===========ANIMATIONS============*/
+.rotate {
+  animation-name: rotate;
+  animation-duration: .5s;
+}
+
+.stick-right {
+  transform: rotate(90deg);
+}
+
+@keyframes rotate {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(90deg);}
+}
+
+.unrotate {
+  animation-name: unrotate;
+  animation-duration: .5s;
+}
+
+@keyframes unrotate {
+  0% {transform: rotate(90deg);}
+  100% {transform: rotate(0deg);}
+}
+
+.retract-menu {
+  animation-name: retract-menu;
+  animation-duration: .5s;
+}
+
+@keyframes retract-menu {
+  0% {top: 250px;}
+  100% {top: -95px;}
+}
+
+.drop-menu {
+  animation-name: drop-menu;
+  animation-duration: .5s;
+}
+
+@keyframes drop-menu {
+  0% {top: -95px;}
+  100% {top: 250px;}
+}
+
+/*===========TABLET BREAK POINT===========*/
 @media only screen and (min-device-width : 768px) {
   html, body {
     font-size: 1em;
