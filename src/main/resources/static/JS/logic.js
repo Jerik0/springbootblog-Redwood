@@ -2,20 +2,8 @@
 
 (() => {
 
-  const postTitle = $('.post-title');
-  const postTitleTimestamp = $('.post-title-timestamp');
-  const userLinks = $('#topbar-list-right');
-  const topBar = document.getElementById('topbar-wrapper');
-  const navBar = $('#nav-bar');
-  const topBarItems = $('.topbar-item');
-  const userLinksContainer = $('#user-links-container');
-  const userStatus = $('#user-status').text();
-  const uploadButton = $('#upload-button');
-  const imageUrlInput = $('#imageUrl');
-  const userImage = $('.user-image-display');
-
   //Check each post title. If title is longer than 15 chars, replace remaining chars with "..."
-  postTitle.each(function() {
+  $('.post-title').each(function() {
     let thisText = this.text;
     if(this.text.length > 15) {
       let replaceString = thisText.substring(15);
@@ -25,6 +13,7 @@
 
   //This giant block of code is for the hamburger menu. These classes use animations.
   $('#forum-hamburger').click(function() {
+    const userLinks = $('#topbar-list-right');
     if($(this).hasClass('rotate')) {
       $(this).removeClass('rotate');
       $(this).addClass('unrotate');
@@ -50,6 +39,7 @@
   window.onscroll = function() {addSticky()};
 
   function addSticky() {
+    const topBar = document.getElementById('topbar-wrapper');
     if(window.pageYOffset >= (topBar.offsetHeight * 2)) {
       topBar.classList.add('sticky');
       $('.wrapper').css('margin-top', topBar.offsetHeight);
@@ -60,7 +50,7 @@
   }
 
   //Cut off extra characters on timestamps
-  postTitleTimestamp.each(function() {
+  $('.post-title-timestamp').each(function() {
     let replaceString;
     if(this.innerHTML.substring(1,2) === "/") {
       replaceString = this.innerHTML.substring(7);
@@ -71,19 +61,18 @@
   });
 
   // If no user (thus no comment-submit form), change submit form bg to none.
-  if(userStatus == "false") {
+  if($('#user-status').text() == "false") {
     console.log('No user!');
     $('#comment-submit-bg').css('border', 'none');
   }
 
   //==========FILESTACK UPLOADING===========
-  uploadButton.click(function() {
+  $('#upload-button').click(function() {
     const client = filestack.init('A5qa4IdqgTea0Y1rOX5qkz');
-    const tempDisplay = $('#temp-display');
 
     const addLink = function(file) {
-      userImage.src = file.url;
-      tempDisplay.src = file.url;
+      $('.user-image-display').src = file.url;
+      $('#temp-display').src = file.url;
     };
 
     client.pick({
@@ -93,14 +82,14 @@
       maxFiles: 3,
       // transformations: { crop: true },
     }).then(
-        //TODO This function needs to display the image that the user has chosen immediately, instead of just setting the input's val to the url.
-        function(result) {
-          const fileUrl = result.filesUploaded[0].url;
-          imageUrlInput.val(fileUrl);
-          result.filesUploaded.forEach(function(file) {
-            addLink(file)
-          });
-        });
+    //TODO This function needs to display the image that the user has chosen immediately, instead of just setting the input's val to the url.
+    function(result) {
+      const fileUrl = result.filesUploaded[0].url;
+      $('#imageUrl').val(fileUrl);
+      result.filesUploaded.forEach(function(file) {
+        addLink(file)
+      });
+    });
   });
 
 })();
