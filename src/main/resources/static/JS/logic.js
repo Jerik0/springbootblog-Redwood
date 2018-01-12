@@ -5,9 +5,8 @@
   const postTitle = $('.post-title');
   const postTitleTimestamp = $('.post-title-timestamp');
   const userLinks = $('#topbar-list-right');
-  const topBar = $('#topbar-container');
+  const topBar = document.getElementById('topbar-wrapper');
   const navBar = $('#nav-bar');
-  const navContainer = $('#nav-items-container');
   const topBarItems = $('.topbar-item');
   const userLinksContainer = $('#user-links-container');
   const userStatus = $('#user-status').text();
@@ -48,6 +47,18 @@
     }
   });
 
+  window.onscroll = function() {addSticky()};
+
+  function addSticky() {
+    if(window.pageYOffset >= (topBar.offsetHeight * 2)) {
+      topBar.classList.add('sticky');
+      $('.wrapper').css('margin-top', topBar.offsetHeight);
+    } else {
+      topBar.classList.remove('sticky');
+      $('.wrapper').css('margin-top', '');
+    }
+  }
+
   //Cut off extra characters on timestamps
   postTitleTimestamp.each(function() {
     let replaceString;
@@ -59,7 +70,6 @@
     this.innerText = this.innerText.replace(replaceString, "");
   });
 
-  console.log(userStatus);
   // If no user (thus no comment-submit form), change submit form bg to none.
   if(userStatus == "false") {
     console.log('No user!');
