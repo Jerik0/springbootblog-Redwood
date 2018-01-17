@@ -2,6 +2,12 @@
 
 (() => {
 
+  //Game Center Functionality==================
+  const gameScriptSrc = $('#gamescripts');
+
+  //TODO when 'change game' is clicked, gameScriptSrc's src attribute uses different JS.
+  //===========================================
+
   //Check each post title. If title is longer than 15 chars, replace remaining chars with "..."
   $('.post-title').each(function() {
     let thisText = this.text;
@@ -36,6 +42,7 @@
     }
   });
 
+  //Make forum navbar stick to top of page when scrolling down.
   window.onscroll = function() {addSticky()};
 
   function addSticky() {

@@ -8,13 +8,13 @@
     null,
     '#ff008d',
     '#38a79c',
-    '#ED4902',
+    '#e8ed39',
     '#DEFFFC',
     '#000000',
     '#ff3a3a',
     '#79ffc4'
   ];
-  const arena = createMatrix(20, 20);
+  const arena = createMatrix(25, 25);
   const player = {
     pos: {x: 0, y: 0},
     matrix: null,
@@ -26,7 +26,7 @@
   let dropInterval = 1000;
   let lastTime = 0;
 
-  context.scale(10, 10);
+  context.scale(20, 20);
 
   //TODO Create animation for powering on
   const powerOn = () => {
@@ -131,6 +131,7 @@
   function draw() {
     context.fillStyle = '#69615b';
     context.fillRect(0, 0, screen.width, screen.height);
+    // context.css('border', 'inline 1px black');
 
     drawMatrix(arena, {x: 0, y: 0});
     drawMatrix(player.matrix, player.pos);
